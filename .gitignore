@@ -9,6 +9,9 @@ __pycache__
 # Project related files
 *.stdout
 *.stderr
+*.tar
+*.gz
+*.tar.gz
 figs/*
 
 # HPCToolkit related files
