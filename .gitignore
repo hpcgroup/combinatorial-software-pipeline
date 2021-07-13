@@ -1,0 +1,20 @@
+# VSCode environments
+.vscode
+
+# Python related files
+__pycache__
+*.pyc
+
+
+# Project related files
+*.stdout
+*.stderr
+*.tar
+*.gz
+*.tar.gz
+figs/*
+
+# HPCToolkit related files
+hpctoolkit-dbs
+*.hpcstruct
+*.hpcrun

@@ -1,0 +1,46 @@
+{
+    "mpi": [
+        {
+            "name": "mvapich2",
+            "version": "2.3",
+            "module": "mvapich2/2021.05.28-cuda-11.1.1"
+        },
+        {
+            "name": "spectrum-mpi",
+            "version": "rolling-release",
+            "module": "spectrum-mpi/rolling-release"
+        }
+    ],
+    "compiler": [
+        {
+            "name": "xl",
+            "version": "2021.03.11",
+            "module": "xl/2021.03.11"
+        },
+        {
+            "name": "gcc",
+            "version": "4.9.3",
+            "module": "gcc/4.9.3"
+        },
+        {
+            "name": "clang",
+            "version": "11.0.1",
+            "module": "clang/ibm-11.0.1"
+        }
+    ],
+    "cuda": [
+        {
+            "name": "cuda",
+            "version": "10.1.243",
+            "module": "cuda/10.1.243"
+        }
+    ],
+    "exceptions": [
+        {
+            "where": {
+                "pattern": ["mvapich2/2021.05.28-cuda-11.1.1"],
+                "substitution": [{"cuda": {"name": "cuda", "version": "11.1.1", "module": "cuda/11.1.1"}}]
+            }
+        }
+    ]
+}
