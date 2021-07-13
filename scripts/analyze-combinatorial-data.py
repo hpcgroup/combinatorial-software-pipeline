@@ -19,7 +19,7 @@ import hatchet as ht
 import matplotlib.pyplot as plt
 
 # local imports
-from utilities import vprint
+from utilities import vprint, get_total_runtime
 
 # verbosity levels
 QUIET = 0
@@ -119,9 +119,10 @@ def parse_data(df, skip_hpctoolkit=False, aggregate=True, verbosity=0):
 
     # get total runtime from HPCToolkit profiles
     if not skip_hpctoolkit:
-        # TODO -- get max time of main function in each GraphFrame
         vprint(verbosity, CHATTY, 'Calculating run time stats from Hatchet GraphFrames.')
+
         run_time_column = 'main_run_time'
+        df[run_time_column] = df['hpctoolkit_profile'].apply(get_total_runtime)
         
 
     # aggregate same runs
@@ -150,8 +151,8 @@ def compare_two_softwares(softwares, agg_df, compare_by='mean', plot=False, verb
 
     if plot:
         minimal_df = agg_df.reset_index()
-        pivot_df = minimal_df.pivot(index='compiler', columns='mpi', values=('duration', 'mean'))
-        error_df = minimal_df.pivot(index='compiler', columns='mpi', values=('duration', 'error'))
+        pivot_df = minimal_df.pivot(index='compiler', columns='mpi', values=('main_run_time', 'mean'))
+        error_df = minimal_df.pivot(index='compiler', columns='mpi', values=('main_run_time', 'error'))
         app_name = minimal_df['application'].iloc[0]
         num_ranks = minimal_df['ranks'].iloc[0]
         
@@ -160,8 +161,8 @@ def compare_two_softwares(softwares, agg_df, compare_by='mean', plot=False, verb
         error_df['openmpi@4.1.0'] = error_df['openmpi@4.1.0'].fillna(error_df['openmpi@4.0.0'])
         pivot_df.drop(columns='openmpi@4.0.0', inplace=True)
         error_df.drop(columns='openmpi@4.0.0', inplace=True)
-        pivot_df = pivot_df * 60.0
-        error_df = error_df * 60.0
+        #pivot_df = pivot_df * 60.0
+        #error_df = error_df * 60.0 # TODO -- I don't think this is mathematically correct.
 
         # use pandas to make group plot
         ax = pivot_df.plot.bar(title='Default Compiler and MPI Versions\n{} on Quartz {} Cores'.format(app_name, num_ranks), 
