@@ -32,6 +32,8 @@ def get_args():
     parser.add_argument('-v', '--verbose', nargs='?', default=0, const=1, type=int, help='Verbosity. 1 for just important \
         output, 2 for full output. No args defaults to 1.')
     parser.add_argument('-i', '--input', required=True, type=str, help='Experiments json file.')
+    parser.add_argument('--dry', '--dry-run', action='store_true', help='Print out the commands, which would be run, \
+        but do not run them.')
     parser.add_argument('--sync', action='store_true', help='Submit jobs without dependencies, so that they can/might \
         run asynchronously.')
     parser.add_argument('--collate', action='store_true', help='Submit jobs with same resources requirements as job array.')
@@ -51,16 +53,24 @@ def get_module_list(experiment):
     '''
     Return a list of modules to load.
     '''
-    return ' '.join([experiment['compiler']['module'], experiment['mpi']['module']])
+    modules = [x['module'] for x in experiment.values() if isinstance(x, dict) and 'module' in x]
+    return ' '.join(modules)
 
 
 def get_spec_from_experiment(experiment):
     '''
     Return the spec to install.
     '''
-    spec_str = '{}%{}@{} ^{}@{}'.format(experiment['spec'], 
+    # collect non mpi or compiler specs
+    other_specs = [x for x in experiment.values() if isinstance(x, dict) and 'name' in x and 'version' in x]
+    other_specs_str = ' '.join(
+        map(lambda x: '^{}'.format(get_spec(x['name'], version=x['version'])), other_specs)
+    )
+
+    spec_str = '{}%{}@{} ^{}@{} {}'.format(experiment['spec'], 
         experiment['compiler']['name'], experiment['compiler']['version'], 
-        experiment['mpi']['name'], experiment['mpi']['version'])
+        experiment['mpi']['name'], experiment['mpi']['version'],
+        other_specs_str)
     return spec_str
 
 
@@ -132,7 +142,8 @@ def get_num_nodes(ranks, ranks_per_node):
     return int( ceil(float(ranks) / ranks_per_node) )
 
 
-def build_dependencies(experiments, spack_env, build_script, build_stdout, build_stderr, max_build_time='05:00:00', verbosity=0):
+def build_dependencies(experiments, spack_env, build_script, build_stdout, build_stderr, max_build_time='05:00:00', 
+    dry=False, verbosity=0):
     '''
     Create yaml for package and call build script.
     '''
@@ -186,21 +197,25 @@ def build_dependencies(experiments, spack_env, build_script, build_stdout, build
     # call build script
     BUILD_CMD = ['sbatch', '-N1', '-t', max_build_time, '-J', 'build-dependencies', '-o', build_stdout, '-e', build_stderr, build_script]
     vprint(verbosity, CHATTY, 'Running command \'{}\'.'.format(' '.join(BUILD_CMD)))
-    build_command_result = subprocess.run(
-            BUILD_CMD,
-            stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-            env=dict(os.environ, SPACK_ENV_NAME=spack_env),
-            universal_newlines=True
-        )
-    
-    build_jobid = build_command_result.stdout.split()[-1]
-    vprint(verbosity, BASIC, 'Submitted build job with id \'{}\'.'.format(build_jobid))
+
+    build_jobid = -1
+    if not dry:
+        build_command_result = subprocess.run(
+                BUILD_CMD,
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                env=dict(os.environ, SPACK_ENV_NAME=spack_env),
+                universal_newlines=True
+            )
+        
+        build_jobid = build_command_result.stdout.split()[-1]
+        vprint(verbosity, BASIC, 'Submitted build job with id \'{}\'.'.format(build_jobid))
+
     return build_jobid
     
 
 
 def run_experiments(experiments, build_script, run_script, root, spack_env, num_repeats=1, csv_file='data.csv', 
-    profile=True, ranks_per_node=32, max_build_time='04:00:00', sync=True, verbosity=0):
+    profile=True, ranks_per_node=32, max_build_time='04:00:00', sync=True, dry=False, verbosity=0):
     '''
     Submits jobs to SLURM job scheduler.
     '''
@@ -242,13 +257,14 @@ def run_experiments(experiments, build_script, run_script, root, spack_env, num_
         run_command.append(run_script)
         vprint(verbosity, CHATTY, '\tRunning job \'{}\' {} times.'.format(' '.join(run_command).strip(), num_repeats))
 
-        for _ in range(num_repeats):
-            # run the job
-            run_command_result = subprocess.run(run_command, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+        if not dry:
+            for _ in range(num_repeats):
+                # run the job
+                run_command_result = subprocess.run(run_command, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
 
-            # so next job depends on this one
-            if sync:
-                last_jobid = run_command_result.stdout.split()[-1]
+                # so next job depends on this one
+                if sync:
+                    last_jobid = run_command_result.stdout.split()[-1]
 
 
 
@@ -266,7 +282,7 @@ def main():
     # run jobs
     run_experiments(experiments, args.build_script, args.run_script, args.output_root, args.spack_env, num_repeats=args.repeat_experiments,
         csv_file=args.csv_file, profile=args.profile, ranks_per_node=args.ranks_per_node, max_build_time=args.max_build_time, 
-        sync=args.sync, verbosity=args.verbose)
+        sync=args.sync, dry=args.dry, verbosity=args.verbose)
     
 
 
