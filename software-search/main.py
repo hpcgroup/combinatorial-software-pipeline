@@ -17,22 +17,22 @@ def main():
     args = get_args()
 
     mpis = [
-        Software('openmpi').make_range(['4.0.5', '3.1.6']),
-        Software('mvapich2').make_range(['2.3.4', '2.2'])
+        Software('openmpi').make_range(versions=['4.0.5', '3.1.6']),
+        Software('mvapich2').make_range(versions=['2.3.4', '2.2'])
     ]
 
     metis = [
-        Software('metis').make_range(['4.0.3', '5.1.0'])
+        Software('metis').make_range(versions=['4.0.3', '5.1.0'])
     ]
 
     mfem = [
-        Software('mfem', variants='+lapack').make_range(['4.2.0', '4.1.0'])
+        Software('mfem', variants='+lapack').make_range(versions=['4.2.0', '4.1.0'])
     ]
 
     blas = [
-        Software('intel-mkl').make_range(['2020.3.279', '2020.2.254']),
-        Software('openblas').make_range(['0.3.12', '0.3.11, 0.2.20']),
-        Software('atlas').make_range(['3.11.41', '3.10.3'])
+        #Software('intel-mkl').make_range(['2020.3.279', '2020.2.254']),
+        Software('openblas').make_range(versions=['0.3.12', '0.3.11', '0.2.20']),
+        #Software('atlas').make_range(['3.11.41', '3.10.3'])
     ]
 
     compilers = [

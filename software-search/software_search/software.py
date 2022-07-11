@@ -1,17 +1,26 @@
 import copy
+import itertools
 from .compiler import Compiler
 from .utilities import *
 
 class SoftwareRange:
-    def __init__(self, software, versions):
+    def __init__(self, software, versions=[], variants=[]):
         self.software_ = software
         self.versions_ = versions
+        self.variants_ = variants
     
     def versions(self):
-        for version in self.versions_:
-            software_copy = copy.deepcopy(self.software_)
-            software_copy.version = version
-            yield software_copy
+        if len(self.variants_) == 0:
+            for version in self.versions_:
+                software_copy = copy.deepcopy(self.software_)
+                software_copy.version = version
+                yield software_copy
+        else:
+            for version, variants in itertools.product(self.versions_, self.variants_):
+                software_copy = copy.deepcopy(self.software_)
+                software_copy.version = version
+                software_copy.variants = variants
+                yield software_copy
 
 
 class Software:
@@ -67,5 +76,5 @@ class Software:
         return cmd_str
         
     
-    def make_range(self, versions):
-        return SoftwareRange(self, versions)
+    def make_range(self, versions=[], variants=[]):
+        return SoftwareRange(self, versions=versions, variants=variants)
