@@ -8,8 +8,8 @@ from software_search.runner import BashRunner
 
 def get_args():
     parser = ArgumentParser()
-    parser.add_argument('--dry', action='store_true', help='Dry run.')
-    parser.add_argument('--spack-env', type=str, help='Spack environment to install in.')
+    parser.add_argument('-d', '--dry', action='store_true', help='Dry run.')
+    parser.add_argument('-e', '--spack-env', type=str, help='Spack environment to install in.')
     return parser.parse_args()
 
 
