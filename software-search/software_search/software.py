@@ -16,10 +16,10 @@ class SoftwareRange:
                 software_copy.version = version
                 yield software_copy
         else:
-            for version, variants in itertools.product(self.versions_, self.variants_):
+            for version, variant_mask in itertools.product(self.versions_, range(2 ** len(self.variants_))):
                 software_copy = copy.deepcopy(self.software_)
                 software_copy.version = version
-                software_copy.variants = variants
+                software_copy.variants = [('+' if variant_mask & (1<<n) else '~') + v for n,v in enumerate(self.variants_)]
                 yield software_copy
 
 
@@ -42,19 +42,28 @@ class Software:
 
     
     def get_spack_spec(self, compiler=None, dependencies=None):
+        ''' Returns the spack spec for this Software object. Includes
+            version, compiler, variants, and dependencies.
+        '''
         base_str = ''
         if hasattr(self, 'version'):
             base_str = '{}@{}'.format(self.name, self.version)
         else:
             base_str = '{}'.format(self.name)
+
+        variants_str = ''
+        if isinstance(self.variants, list):
+            variants_str = ' '.join(self.variants)
+        else:
+            variants_str = self.variants
         
         if compiler is None:
-            full_spec_str = '{} {}'.format(base_str, self.variants)
+            full_spec_str = '{} {}'.format(base_str, variants_str)
         else:
             full_spec_str = '{}%{} {}'.format(
                                             base_str, 
                                             compiler.get_compiler_spec(),
-                                            self.variants
+                                            variants_str
                                         )
 
         if dependencies:
@@ -71,10 +80,12 @@ class Software:
     def __str__(self):
         return self.get_spack_spec()
 
+    def __repr__(self):
+        return self.get_spack_spec()
+
     def get_run_command(self):
         cmd_str = '{} {}'.format(self.run_cmd, self.run_args)
         return cmd_str
-        
     
     def make_range(self, versions=[], variants=[]):
         return SoftwareRange(self, versions=versions, variants=variants)
