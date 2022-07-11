@@ -19,6 +19,7 @@ def main():
 
     mpis = [
         Software('openmpi').make_range(versions=['4.0.5', '3.1.6']),
+        Software('mvapich2').make_range(versions=['2.3.4', '2.2'])
     ]
 
     mfem = [
