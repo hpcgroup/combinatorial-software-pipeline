@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+from hashlib import md5
+>>>>>>> abbd2d85b58a48e9557892d956aeca76d3c68e88
 import time
 import subprocess
 from .utilities import listify
@@ -28,13 +32,14 @@ class BashRunner():
         spack_env_str = ''
         if self.spack_env:
             spack_env_str = '-e {} '.format(self.spack_env)
-        
-        build_commands_str = 'spack {}install {}'.format(
-            spack_env_str,
-            software.get_spack_spec(compiler=compiler, dependencies=software)
-        )
 
-        self.set_spack_load(software.get_spack_spec(compiler=compiler, dependencies=dependencies))
+        spec_str = software.get_spack_spec(compiler=compiler, dependencies=dependencies)
+        spec_hash_str = str(md5(spec_str.encode()).hexdigest())
+
+        create_dir_str = 'mkdir {}'.format(spec_hash_str)
+        build_commands_str = 'spack {}install --reuse {}'.format(spack_env_str, spec_str)
+
+        self.set_spack_load(spec_str)
 
         return [build_commands_str]
     

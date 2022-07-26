@@ -26,6 +26,7 @@ def run_and_profile(software, runner, spack_env=None, dry=False):
     
     runner.run(software)
 
+
 def search(search_strategy, runner, main_software, compilers, dependencies, dry=False, 
     do_build=True, do_run=True, spack_env=None):
 
