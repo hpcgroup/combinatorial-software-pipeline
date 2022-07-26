@@ -32,6 +32,7 @@ class RandomSearch:
             
             dependencies.append(softwares_flattened)
 
+        # TODO: replace this entire bit with generator, so whole list is not generated in memory
         total_space = list(itertools.product(self.compiler_search_space, *dependencies))
         random.shuffle(total_space)
         total_space = total_space[:self.max_iter_]
