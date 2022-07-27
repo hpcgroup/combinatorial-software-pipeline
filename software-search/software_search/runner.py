@@ -46,7 +46,7 @@ class BashRunner():
         
         # run commands
         for cmd in commands:
-            res = subprocess.run(cmd.split(' '))
+            res = subprocess.run(cmd, shell=True)
             if res.returncode != 0:
                 return
 
@@ -82,12 +82,12 @@ class BashRunner():
 
         # run commands
         for cmd in commands[:-1]:
-            res = subprocess.run(cmd.split(' '))
+            res = subprocess.run(cmd, shell=True)
             if res.returncode != 0:
                 return
         
         start = time.time()
-        res = subprocess.run(commands[-1].split(' '))
+        res = subprocess.run(commands[-1], shell=True)
         duration = time.time() - start
 
         
