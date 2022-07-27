@@ -1,17 +1,15 @@
-<<<<<<< HEAD
-=======
 from hashlib import md5
->>>>>>> abbd2d85b58a48e9557892d956aeca76d3c68e88
 import time
 import subprocess
 from .utilities import listify
 
 class BashRunner():
     
-    def __init__(self):
+    def __init__(self, output_dir=None):
         self.use_mpi = False
         self.spack_env = None
         self.spack_loads = []
+        self.output_dir = output_dir
     
     def set_spack_env(self, spack_env):
         self.spack_env = spack_env
@@ -34,10 +32,12 @@ class BashRunner():
             spack_env_str = '-e {} '.format(self.spack_env)
 
         spec_str = software.get_spack_spec(compiler=compiler, dependencies=dependencies)
-        spec_hash_str = str(md5(spec_str.encode()).hexdigest())
-
-        create_dir_str = 'mkdir {}'.format(spec_hash_str)
         build_commands_str = 'spack {}install --reuse {}'.format(spack_env_str, spec_str)
+
+        if self.output_dir is not None:
+            spec_hash_str = str(md5(spec_str.encode()).hexdigest())
+            output_file_str = '{}/{}-build.stdout'.format(self.output_dir, spec_hash_str)
+            build_commands_str = '{} > {}'.format(build_commands_str, output_file_str)
 
         self.set_spack_load(spec_str)
 
@@ -75,6 +75,13 @@ class BashRunner():
         command_str = software.get_run_command()
         if self.use_mpi:
             command_str = '{} -np {} {}'.format(self.mpi_cmd, self.num_ranks, command_str)
+
+        # TODO: How to get spack spec hash without build settings?
+        #if self.output_dir is not None:
+        #    spec_str = software.get_spack_spec(compiler=compiler, dependencies=dependencies)
+        #    spec_hash_str = str(md5(spec_str.encode()).hexdigest())
+        #    output_file_str = '{}/{}-run.stdout'.format(self.output_dir, spec_hash_str)
+        #    command_str = '{} > {}'.format(command_str, output_file_str)
         
         commands.append(command_str)
         return commands
