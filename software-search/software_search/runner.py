@@ -1,6 +1,8 @@
 from hashlib import md5
 import time
 import subprocess
+from spack.spec import Spec
+from spack.cmd.install import install_specs
 from .utilities import listify
 
 class BashRunner():
@@ -53,6 +55,18 @@ class BashRunner():
             if res.returncode != 0:
                 return
 
+    def build_using_api(self, software, compiler, dependencies):
+        spec_str = software.get_spack_spec(compiler=compiler, dependencies=dependencies)
+        spec_abstract = Spec(spec_str)
+        spec_concrete = spec.concretized()
+        spec_hash_str = spec_concrete.dag_hash()
+
+        # I don't really know what cli_args and kwargs are supposed to be
+        # See: https://spack.readthedocs.io/en/latest/spack.cmd.html#spack.cmd.install.install_specs
+        cli_args = argparse.Namespace()
+        kwargs = {}
+        specs = [(spec_abstract, spec_concrete)]
+        install_specs(cli_args, kwargs, specs)
 
     def get_commands(self, software, compiler, dependencies):
         commands = []
