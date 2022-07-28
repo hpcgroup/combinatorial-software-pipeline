@@ -34,7 +34,7 @@ class BashRunner():
         spec_str = software.get_spack_spec(compiler=compiler, dependencies=dependencies)
         build_commands_str = 'spack {}install --reuse {}'.format(spack_env_str, spec_str)
 
-        if self.output_dir is not None:
+        if self.output_dir:
             spec_hash_str = str(md5(spec_str.encode()).hexdigest())
             output_file_str = '{}/{}-build.stdout'.format(self.output_dir, spec_hash_str)
             build_commands_str = '{} > {}'.format(build_commands_str, output_file_str)
@@ -54,7 +54,7 @@ class BashRunner():
                 return
 
 
-    def get_commands(self, software):
+    def get_commands(self, software, compiler, dependencies):
         commands = []
 
         spack_env_str = ''
@@ -76,19 +76,18 @@ class BashRunner():
         if self.use_mpi:
             command_str = '{} -np {} {}'.format(self.mpi_cmd, self.num_ranks, command_str)
 
-        # TODO: How to get spack spec hash without build settings?
-        #if self.output_dir is not None:
-        #    spec_str = software.get_spack_spec(compiler=compiler, dependencies=dependencies)
-        #    spec_hash_str = str(md5(spec_str.encode()).hexdigest())
-        #    output_file_str = '{}/{}-run.stdout'.format(self.output_dir, spec_hash_str)
-        #    command_str = '{} > {}'.format(command_str, output_file_str)
+        if self.output_dir:
+            spec_str = software.get_spack_spec(compiler=compiler, dependencies=dependencies)
+            spec_hash_str = str(md5(spec_str.encode()).hexdigest())
+            output_file_str = '{}/{}-run.stdout'.format(self.output_dir, spec_hash_str)
+            command_str = '{} > {}'.format(command_str, output_file_str)
         
         commands.append(command_str)
         return commands
         
 
-    def run(self, software):
-        commands = self.get_commands(software)
+    def run(self, software, compiler, dependencies):
+        commands = self.get_commands(software, compiler, dependencies)
 
         # run commands
         for cmd in commands[:-1]:

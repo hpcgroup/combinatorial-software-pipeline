@@ -16,15 +16,15 @@ def build(software, compiler, dependencies, runner, spack_env=None, dry=False):
     runner.build(software, compiler, dependencies)
 
 
-def run_and_profile(software, runner, spack_env=None, dry=False):
+def run_and_profile(software, compiler, dependencies, runner, spack_env=None, dry=False):
     if spack_env:
         runner.set_spack_env(spack_env)
 
     if dry:
-        print('\n'.join(runner.get_commands(software)))
+        print('\n'.join(runner.get_commands(software, compiler, dependencies)))
         return
     
-    runner.run(software)
+    runner.run(software, compiler, dependencies)
 
 
 def search(search_strategy, runner, main_software, compilers, dependencies, dry=False, 
@@ -44,7 +44,7 @@ def search(search_strategy, runner, main_software, compilers, dependencies, dry=
 
         # RUN
         if do_run:
-            perf_metric = run_and_profile(main_software, runner, dry=dry)
+            perf_metric = run_and_profile(main_software, compiler, software, runner, spack_env=spack_env, dry=dry)
 
             # INFORMED NEXT GUESS
             search_strategy.inform(perf_metric)
