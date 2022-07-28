@@ -42,13 +42,17 @@ class BashRunner():
     
     def build(self, software, compiler, dependencies):
         commands = self.get_build_commands(software, compiler, dependencies)
-        self.set_spack_load(software.get_spack_spec(compiler=compiler, dependencies=dependencies))
+        spec_str = software.get_spack_spec(compiler=compiler, dependencies=dependencies)
+        self.set_spack_load(spec_str)
         
         # run commands
         for cmd in commands:
             res = subprocess.run(cmd, shell=True)
             if res.returncode != 0:
                 return
+
+        res = subprocess.run('spack find -p {}'.format(spec_str), shell=True)
+        print(res.stdout)
 
 
     def get_commands(self, software):
@@ -62,12 +66,10 @@ class BashRunner():
             #])
             spack_env_str = '-e {} '.format(self.spack_env)
         
-        for spec in self.spack_loads:
-            load_commands_str = map(
-                    lambda x: 'spack {}load {}'.format(spack_env_str, x), 
-                    self.spack_loads
-                )
-            commands.extend(load_commands_str)
+        #for spec in self.spack_loads:
+            #find_command_str = 'spack find --json {}'.format(spack, spec)
+            
+            
 
         command_str = software.get_run_command()
         if self.use_mpi:
