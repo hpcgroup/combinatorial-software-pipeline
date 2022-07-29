@@ -39,6 +39,7 @@ class Software:
 
         self.run_cmd = run_cmd if run_cmd else name
         self.run_args = run_args
+        self.spec_hash = None
 
     
     def get_spack_spec(self, compiler=None, dependencies=None):

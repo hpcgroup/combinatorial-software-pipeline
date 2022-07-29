@@ -13,7 +13,8 @@ def build(software, compiler, dependencies, runner, spack_env=None, dry=False):
         return
     
     # run commands
-    runner.build(software, compiler, dependencies)
+    #runner.build(software, compiler, dependencies)
+    runner.build_using_api(software, compiler, dependencies)
 
 
 def run_and_profile(software, compiler, dependencies, runner, spack_env=None, dry=False):

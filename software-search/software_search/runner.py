@@ -1,8 +1,9 @@
 from hashlib import md5
 import time
 import subprocess
-#from spack.spec import Spec
-#from spack.cmd.install import install_specs
+import argparse
+from spack.spec import Spec
+from spack.cmd.install import install_specs
 from .utilities import listify
 
 class BashRunner():
@@ -59,21 +60,32 @@ class BashRunner():
         res = subprocess.run('spack find -p {}'.format(spec_str), shell=True)
 
 
-#    def build_using_api(self, software, compiler, dependencies):
-#        spec_str = software.get_spack_spec(compiler=compiler, dependencies=dependencies)
-#        spec_abstract = Spec(spec_str)
-#        spec_concrete = spec.concretized()
-#        spec_hash_str = spec_concrete.dag_hash()
-#
-#        # I don't really know what cli_args and kwargs are supposed to be
-#        # See: https://spack.readthedocs.io/en/latest/spack.cmd.html#spack.cmd.install.install_specs
-#        cli_args = argparse.Namespace()
-#        kwargs = {}
-#        specs = [(spec_abstract, spec_concrete)]
-#        install_specs(cli_args, kwargs, specs)
+    def build_using_api(self, software, compiler, dependencies):
+        print("in build using api")
+        spec_str = software.get_spack_spec(compiler=compiler, dependencies=dependencies)
+        spec_abstract = Spec(spec_str)
+        print("concretizing")
+        spec_concrete = spec_abstract.concretized()
+        spec_hash_str = spec_concrete.dag_hash()
+        print("spec_hash_str = {}".format(spec_hash_str))
+        software.spec_hash = spec_hash_str
 
+        # I don't really know what cli_args and kwargs are supposed to be
+        # See: https://spack.readthedocs.io/en/latest/spack.cmd.html#spack.cmd.install.install_specs
+        cli_args = argparse.Namespace()
+        kwargs = {}
+        specs = [(spec_abstract, spec_concrete)]
+        print("about to install")
+        install_specs(cli_args, kwargs, specs)
 
-    def get_commands(self, software, compiler, dependencies):
+    def get_path_to_spec_binary(self, software, compiler, dependencies):
+        print("finding command string")
+        find_command_str = 'spack find -p /{}'.format(software.spec_hash)
+        find_command_stdout = subprocess.run(find_command_str, shell=True, capture_output=True, text=True)
+        path = find_command_stdout.stdout.splitlines()[-1].split()[-1] # This is sketchy
+        return path
+
+    def get_commands_using_api(self, software, compiler, dependencies):
         commands = []
 
         spack_env_str = ''
@@ -84,37 +96,62 @@ class BashRunner():
             #])
             spack_env_str = '-e {} '.format(self.spack_env)
 
-        for spec in self.spack_loads:
-            print(spec)
-
-        spec_str = software.get_spack_spec(compiler, dependencies)
-        find_command_str = 'spack find -p {}'.format(spec_str)
-        find_command_stdout = subprocess.run(find_command_str, shell=True, capture_output=True, text=True)
-        path = find_command_stdout.stdout.splitlines()[-1].split()[-1] # This is sketchy
+        # This doesn't have any loads?
+        path = self.get_path_to_spec_binary(software, compiler, dependencies)
         command_str = '{}/bin/{}'.format(path, software.name)
+        print("command_str = {}".format(command_str))
 
         if self.use_mpi:
             command_str = '{} -np {} {}'.format(self.mpi_cmd, self.num_ranks, command_str)
 
         if self.output_dir:
-            spec_str = software.get_spack_spec(compiler=compiler, dependencies=dependencies)
-            spec_hash_str = str(md5(spec_str.encode()).hexdigest())
-            output_file_str = '{}/{}-run.stdout'.format(self.output_dir, spec_hash_str)
+            output_file_str = '{}/{}-run.stdout'.format(self.output_dir, software.spec_hash)
             command_str = '{} > {}'.format(command_str, output_file_str)
         
+        commands.append(command_str)
+        return commands
+
+    def get_commands(self, software, compiler, dependencies):
+        commands = []
+
+        spack_env_str = ''
+        if self.spack_env:
+            #commands.extend([
+            #    'spack env deactivate',
+            #    'spack env activate {}'.format(self.spack_env)
+            #])
+            commands.extend([
+                'spack env activate {}'.format(self.spack_env)
+            ])
+            spack_env_str = '-e {}'.format(self.spack_env)
+
+        for spec in self.spack_loads:
+            load_commands_str = map(
+                    lambda x: 'spack {} load {}'.format(spack_env_str, x),
+                    self.spack_loads
+                )
+            commands.extend(load_commands_str)
+
+        command_str = software.get_run_command()
+        if self.use_mpi:
+            command_str = '{} -np {} {}'.format(self.mpi_cmd, self.num_ranks, command_str)
+
         commands.append(command_str)
         return commands
         
 
     def run(self, software, compiler, dependencies):
-        commands = self.get_commands(software, compiler, dependencies)
+        #commands = self.get_commands(software, compiler, dependencies)
+        commands = self.get_commands_using_api(software, compiler, dependencies)
 
         # run commands
         for cmd in commands[:-1]:
+            print('running cmd = {}'.format(cmd))
             res = subprocess.run(cmd, shell=True)
             if res.returncode != 0:
                 return
         
+        print('running cmd = {}'.format(cmd))
         start = time.time()
         res = subprocess.run(commands[-1], shell=True)
         duration = time.time() - start
