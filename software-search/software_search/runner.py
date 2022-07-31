@@ -61,22 +61,29 @@ class BashRunner():
 
 
     def build_using_api(self, software, compiler, dependencies):
-        print("in build using api")
-        spec_str = software.get_spack_spec(compiler=compiler, dependencies=dependencies)
-        spec_abstract = Spec(spec_str)
-        print("concretizing")
-        spec_concrete = spec_abstract.concretized()
-        spec_hash_str = spec_concrete.dag_hash()
-        print("spec_hash_str = {}".format(spec_hash_str))
-        software.spec_hash = spec_hash_str
+        print("Generating abstract spec")
+        software.set_abstract_spec(compiler=compiler, dependencies=dependencies)
+        print("Concretizing spec: {}".format(software.abstract_spec))
+        software.concretize()
+        print("Installing spec: {}".format(software.concrete_spec))
+        software.install(cli_args=argparse.Namespace(), kwargs={})
 
-        # I don't really know what cli_args and kwargs are supposed to be
-        # See: https://spack.readthedocs.io/en/latest/spack.cmd.html#spack.cmd.install.install_specs
-        cli_args = argparse.Namespace()
-        kwargs = {}
-        specs = [(spec_abstract, spec_concrete)]
-        print("about to install")
-        install_specs(cli_args, kwargs, specs)
+        #print("in build using api")
+        #spec_str = software.get_spack_spec(compiler=compiler, dependencies=dependencies)
+        #spec_abstract = Spec(spec_str)
+        #print("concretizing")
+        #spec_concrete = spec_abstract.concretized()
+        #spec_hash_str = spec_concrete.dag_hash()
+        #print("spec_hash_str = {}".format(spec_hash_str))
+        #software.spec_hash = spec_hash_str
+
+        ## I don't really know what cli_args and kwargs are supposed to be
+        ## See: https://spack.readthedocs.io/en/latest/spack.cmd.html#spack.cmd.install.install_specs
+        #cli_args = argparse.Namespace()
+        #kwargs = {}
+        #specs = [(spec_abstract, spec_concrete)]
+        #print("about to install")
+        #install_specs(cli_args, kwargs, specs)
 
     def get_path_to_spec_binary(self, software, compiler, dependencies):
         print("finding command string")
@@ -87,25 +94,22 @@ class BashRunner():
 
     def get_commands_using_api(self, software, compiler, dependencies):
         commands = []
-
-        spack_env_str = ''
-        if self.spack_env:
-            #commands.extend([
-            #    'spack env deactivate',
-            #    'spack env activate {}'.format(self.spack_env)
-            #])
-            spack_env_str = '-e {} '.format(self.spack_env)
-
         # This doesn't have any loads?
-        path = self.get_path_to_spec_binary(software, compiler, dependencies)
-        command_str = '{}/bin/{}'.format(path, software.name)
-        print("command_str = {}".format(command_str))
+
+        #path = self.get_path_to_spec_binary(software, compiler, dependencies)
+        #command_str = '{}/bin/{}'.format(path, software.name)
+        #print("command_str = {}".format(command_str))
+        #path = software.get_path_to_binary()
+
+        command_str = software.get_run_command_api()
 
         if self.use_mpi:
-            command_str = '{} -np {} {}'.format(self.mpi_cmd, self.num_ranks, command_str)
+            mpi_cmd = software.get_mpi_command_api(self.mpi_cmd)
+            command_str = '{} -np {} {}'.format(mpi_cmd, self.num_ranks, command_str)
+            #command_str = '{} -np {} {}'.format(self.mpi_cmd, self.num_ranks, command_str)
 
         if self.output_dir:
-            output_file_str = '{}/{}-run.stdout'.format(self.output_dir, software.spec_hash)
+            output_file_str = '{}/{}-run.stdout'.format(self.output_dir, software.hash)
             command_str = '{} > {}'.format(command_str, output_file_str)
         
         commands.append(command_str)
@@ -143,6 +147,8 @@ class BashRunner():
     def run(self, software, compiler, dependencies):
         #commands = self.get_commands(software, compiler, dependencies)
         commands = self.get_commands_using_api(software, compiler, dependencies)
+        software.setup_software()
+        #software.setup_mpi()
 
         # run commands
         for cmd in commands[:-1]:
@@ -151,9 +157,7 @@ class BashRunner():
             if res.returncode != 0:
                 return
         
-        print('running cmd = {}'.format(cmd))
+        print('running cmd = {}'.format(commands[-1]))
         start = time.time()
         res = subprocess.run(commands[-1], shell=True)
         duration = time.time() - start
-
-        

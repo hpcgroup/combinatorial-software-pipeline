@@ -1,5 +1,8 @@
 import copy
 import itertools
+from spack.spec import Spec
+from spack.cmd.install import install_specs
+from spack.build_environment import setup_package
 from .compiler import Compiler
 from .utilities import *
 
@@ -87,6 +90,39 @@ class Software:
     def get_run_command(self):
         cmd_str = '{} {}'.format(self.run_cmd, self.run_args)
         return cmd_str
+
+    def get_run_command_api(self):
+        run_cmd = self.concrete_spec.prefix.bin.join(self.run_cmd)
+        cmd_str = '{} {}'.format(run_cmd, self.run_args)
+        return cmd_str
+
+    def get_mpi_command_api(self, mpi_cmd):
+        return self.concrete_spec['mpi'].prefix.bin.join(mpi_cmd)
     
     def make_range(self, versions=[], variants=[]):
         return SoftwareRange(self, versions=versions, variants=variants)
+
+    def set_abstract_spec(self, compiler, dependencies):
+        spec_str = self.get_spack_spec(compiler=compiler, dependencies=dependencies)
+        self.abstract_spec = Spec(spec_str)
+
+    def concretize(self):
+        self.concrete_spec = self.abstract_spec.concretized()
+        self.hash = self.concrete_spec.dag_hash()
+
+    def install(self, cli_args, kwargs):
+        specs = [(self.abstract_spec, self.concrete_spec)]
+        install_specs(cli_args, kwargs, specs)
+
+    def get_path_to_binary(self):
+        return self.concrete_spec.prefix.bin.join(self.run_cmd)
+
+    def get_path_to_mpi_binary(self, mpi_cmd):
+        return self.concrete_spec['mpi'].prefix.bin.join(mpi_cmd)
+
+    def setup_software(self, dirty=False, context='test'):
+        setup_package(self.concrete_spec.package, dirty=dirty, context=context)
+
+    def setup_mpi(self, dirty=False, context='test'):
+        setup_package(self.concrete_spec['mpi'].package, dirty=dirty, context=context)
+
