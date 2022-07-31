@@ -101,12 +101,16 @@ class BashRunner():
         #print("command_str = {}".format(command_str))
         #path = software.get_path_to_binary()
 
-        command_str = software.get_run_command_api()
+        #command_str = software.get_run_command_api()
 
+        #if self.use_mpi:
+        #    mpi_cmd = software.get_mpi_command_api(self.mpi_cmd)
+        #    command_str = '{} -np {} {}'.format(mpi_cmd, self.num_ranks, command_str)
+        #    #command_str = '{} -np {} {}'.format(self.mpi_cmd, self.num_ranks, command_str)
+
+        command_str = software.get_run_command()
         if self.use_mpi:
-            mpi_cmd = software.get_mpi_command_api(self.mpi_cmd)
-            command_str = '{} -np {} {}'.format(mpi_cmd, self.num_ranks, command_str)
-            #command_str = '{} -np {} {}'.format(self.mpi_cmd, self.num_ranks, command_str)
+            command_str = '{} -np {} {}'.format(self.mpi_cmd, self.num_ranks, command_str)
 
         if self.output_dir:
             output_file_str = '{}/{}-run.stdout'.format(self.output_dir, software.hash)
@@ -118,23 +122,23 @@ class BashRunner():
     def get_commands(self, software, compiler, dependencies):
         commands = []
 
-        #spack_env_str = ''
-        #if self.spack_env:
-        #    #commands.extend([
-        #    #    'spack env deactivate',
-        #    #    'spack env activate {}'.format(self.spack_env)
-        #    #])
-        #    commands.extend([
-        #        'spack env activate {}'.format(self.spack_env)
-        #    ])
-        #    spack_env_str = '-e {}'.format(self.spack_env)
+        spack_env_str = ''
+        if self.spack_env:
+            #commands.extend([
+            #    'spack env deactivate',
+            #    'spack env activate {}'.format(self.spack_env)
+            #])
+            commands.extend([
+                'spack env activate {}'.format(self.spack_env)
+            ])
+            spack_env_str = '-e {}'.format(self.spack_env)
 
-        #for spec in self.spack_loads:
-        #    load_commands_str = map(
-        #            lambda x: 'spack {} load {}'.format(spack_env_str, x),
-        #            self.spack_loads
-        #        )
-        #    commands.extend(load_commands_str)
+        for spec in self.spack_loads:
+            load_commands_str = map(
+                    lambda x: 'spack {} load {}'.format(spack_env_str, x),
+                    self.spack_loads
+                )
+            commands.extend(load_commands_str)
 
         command_str = software.get_run_command()
         if self.use_mpi:
