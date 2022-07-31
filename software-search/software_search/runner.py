@@ -118,23 +118,23 @@ class BashRunner():
     def get_commands(self, software, compiler, dependencies):
         commands = []
 
-        spack_env_str = ''
-        if self.spack_env:
-            #commands.extend([
-            #    'spack env deactivate',
-            #    'spack env activate {}'.format(self.spack_env)
-            #])
-            commands.extend([
-                'spack env activate {}'.format(self.spack_env)
-            ])
-            spack_env_str = '-e {}'.format(self.spack_env)
+        #spack_env_str = ''
+        #if self.spack_env:
+        #    #commands.extend([
+        #    #    'spack env deactivate',
+        #    #    'spack env activate {}'.format(self.spack_env)
+        #    #])
+        #    commands.extend([
+        #        'spack env activate {}'.format(self.spack_env)
+        #    ])
+        #    spack_env_str = '-e {}'.format(self.spack_env)
 
-        for spec in self.spack_loads:
-            load_commands_str = map(
-                    lambda x: 'spack {} load {}'.format(spack_env_str, x),
-                    self.spack_loads
-                )
-            commands.extend(load_commands_str)
+        #for spec in self.spack_loads:
+        #    load_commands_str = map(
+        #            lambda x: 'spack {} load {}'.format(spack_env_str, x),
+        #            self.spack_loads
+        #        )
+        #    commands.extend(load_commands_str)
 
         command_str = software.get_run_command()
         if self.use_mpi:
@@ -146,7 +146,8 @@ class BashRunner():
 
     def run(self, software, compiler, dependencies):
         #commands = self.get_commands(software, compiler, dependencies)
-        commands = self.get_commands_using_api(software, compiler, dependencies)
+        #commands = self.get_commands_using_api(software, compiler, dependencies)
+        commands = self.get_commands(software, compiler, dependencies)
         software.setup_software()
         #software.setup_mpi()
 
