@@ -1,7 +1,7 @@
 #!/usr/bin/env spack-python
 from argparse import ArgumentParser
 import os, sys
-sys.path.append('.')
+sys.path.append('..')
 from software_search.software import Software
 from software_search.software_search import search
 from software_search.grid_search import GridSearch
@@ -23,20 +23,20 @@ def main():
 
     mpis = [
         Software('openmpi', version='4.1.0'),
-        Software('mvapich2', version='2.3')
+        Software('impi', version='2017.0')
     ]
 
     compilers = [
-	Compiler('intel', version='19.0.4.227'),
+	Compiler('gcc', version='4.9.3'),
     ]
 
     main_software = Software('laghos', version='3.1', run_cmd='laghos',
-                            variants='', run_args='-p 1 -dim 3 -rs 4 -tf 0.6 -pa')
+                            variants='', run_args='-p 1 -dim 2 -rs 4 -tf 0.6 -pa')
 
     search_strategy = GridSearch()
     #search_strategy = RandomSearch(max_iter=2)
-    runner = BashRunner(output_dir='/home/ryansynk/Documents/RESEARCH/pssg/spack-project/combinatorial-software-pipeline/software-search/quartz-test-outputdir')
-    runner.set_mpi(num_ranks=4)
+    runner = BashRunner(output_dir='/usr/workspace/synk1/combinatorial-software-pipeline/software-search/quartz-test-outputdir')
+    runner.set_mpi(num_ranks=32)
 
     search(search_strategy, runner, main_software, compilers, 
         [mpis], dry=args.dry, spack_env=args.spack_env)
