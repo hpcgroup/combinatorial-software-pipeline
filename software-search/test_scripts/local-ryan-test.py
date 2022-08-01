@@ -1,4 +1,7 @@
+#!/usr/bin/env spack-python
 from argparse import ArgumentParser
+import os, sys
+sys.path.append('..')
 from software_search.software import Software
 from software_search.software_search import search
 from software_search.grid_search import GridSearch
@@ -11,7 +14,7 @@ def get_args():
     parser = ArgumentParser()
     parser.add_argument('-d', '--dry', action='store_true', help='Dry run.')
     parser.add_argument('-e', '--spack-env', type=str, help='Spack environment to install in.')
-    parser.add_argument('-o', '--output-dir', type=str, help='Directory to log output files into')
+    parser.add_argument('-o', '--output-dir', type=str, default='/home/ryansynk/Documents/RESEARCH/pssg/spack-project/test_output',help='Directory to log output files into')
     return parser.parse_args()
 
 
@@ -30,7 +33,7 @@ def main():
                             variants='', run_args='-p 1 -dim 3 -rs 2 -tf 0.6 -pa')
 
     search_strategy = GridSearch()
-    runner = BashRunner(output_dir='/home/ryansynk/Documents/RESEARCH/pssg/spack-project/combinatorial-software-pipeline/software-search/test_output')
+    runner = BashRunner(output_dir=args.output_dir)
     runner.set_mpi(num_ranks=4)
 
     search(search_strategy, runner, main_software, compilers, 
