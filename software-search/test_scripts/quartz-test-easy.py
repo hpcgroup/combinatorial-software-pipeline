@@ -14,7 +14,7 @@ def get_args():
     parser = ArgumentParser()
     parser.add_argument('-d', '--dry', action='store_true', help='Dry run.')
     parser.add_argument('-e', '--spack-env', type=str, help='Spack environment to install in.')
-    parser.add_argument('-o', '--output-dir', type=str, help='Directory to log output files into')
+    parser.add_argument('-o', '--output-dir', type=str, default='/usr/workspace/synk1/test_output', help='Directory to log output files into')
     return parser.parse_args()
 
 
@@ -23,11 +23,12 @@ def main():
 
     mpis = [
         Software('openmpi', version='4.1.0'),
-        Software('impi', version='2017.0')
+        Software('intel-mpi', version='2017.0')
     ]
 
     compilers = [
 	Compiler('gcc', version='4.9.3'),
+	Compiler('intel', version='19.0.4.227')
     ]
 
     main_software = Software('laghos', version='3.1', run_cmd='laghos',
@@ -35,7 +36,7 @@ def main():
 
     search_strategy = GridSearch()
     #search_strategy = RandomSearch(max_iter=2)
-    runner = BashRunner(output_dir='/usr/workspace/synk1/test_output')
+    runner = BashRunner(output_dir=args.output_dir)
     runner.set_mpi(num_ranks=32)
 
     search(search_strategy, runner, main_software, compilers, 
