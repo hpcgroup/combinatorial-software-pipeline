@@ -68,23 +68,6 @@ class BashRunner():
         print("Installing spec: {}".format(software.concrete_spec))
         software.install(cli_args=argparse.Namespace(), kwargs={})
 
-        #print("in build using api")
-        #spec_str = software.get_spack_spec(compiler=compiler, dependencies=dependencies)
-        #spec_abstract = Spec(spec_str)
-        #print("concretizing")
-        #spec_concrete = spec_abstract.concretized()
-        #spec_hash_str = spec_concrete.dag_hash()
-        #print("spec_hash_str = {}".format(spec_hash_str))
-        #software.spec_hash = spec_hash_str
-
-        ## I don't really know what cli_args and kwargs are supposed to be
-        ## See: https://spack.readthedocs.io/en/latest/spack.cmd.html#spack.cmd.install.install_specs
-        #cli_args = argparse.Namespace()
-        #kwargs = {}
-        #specs = [(spec_abstract, spec_concrete)]
-        #print("about to install")
-        #install_specs(cli_args, kwargs, specs)
-
     def get_path_to_spec_binary(self, software, compiler, dependencies):
         print("finding command string")
         find_command_str = 'spack find -p /{}'.format(software.spec_hash)
@@ -94,19 +77,6 @@ class BashRunner():
 
     def get_commands_using_api(self, software, compiler, dependencies):
         commands = []
-        # This doesn't have any loads?
-
-        #path = self.get_path_to_spec_binary(software, compiler, dependencies)
-        #command_str = '{}/bin/{}'.format(path, software.name)
-        #print("command_str = {}".format(command_str))
-        #path = software.get_path_to_binary()
-
-        #command_str = software.get_run_command_api()
-
-        #if self.use_mpi:
-        #    mpi_cmd = software.get_mpi_command_api(self.mpi_cmd)
-        #    command_str = '{} -np {} {}'.format(mpi_cmd, self.num_ranks, command_str)
-        #    #command_str = '{} -np {} {}'.format(self.mpi_cmd, self.num_ranks, command_str)
 
         command_str = software.get_run_command()
         if self.use_mpi:
@@ -115,7 +85,7 @@ class BashRunner():
         if self.output_dir:
             output_file_str = '{}/{}-run.stdout'.format(self.output_dir, software.hash)
             command_str = '{} > {}'.format(command_str, output_file_str)
-        
+
         commands.append(command_str)
         return commands
 
@@ -150,8 +120,8 @@ class BashRunner():
 
     def run(self, software, compiler, dependencies):
         #commands = self.get_commands(software, compiler, dependencies)
-        #commands = self.get_commands_using_api(software, compiler, dependencies)
-        commands = self.get_commands(software, compiler, dependencies)
+        commands = self.get_commands_using_api(software, compiler, dependencies)
+        #commands = self.get_commands(software, compiler, dependencies)
         software.setup_software()
         #software.setup_mpi()
 
