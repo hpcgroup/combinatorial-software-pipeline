@@ -35,7 +35,7 @@ def main():
 
     search_strategy = GridSearch()
     #search_strategy = RandomSearch(max_iter=2)
-    runner = BashRunner(output_dir='/usr/workspace/synk1/combinatorial-software-pipeline/software-search/quartz-test-outputdir')
+    runner = BashRunner(output_dir='/usr/workspace/synk1/test_output')
     runner.set_mpi(num_ranks=32)
 
     search(search_strategy, runner, main_software, compilers, 
