@@ -66,7 +66,7 @@ class BashRunner():
         print("Concretizing spec: {}".format(software.abstract_spec))
         software.concretize()
         print("Installing spec: {}".format(software.concrete_spec))
-        software.install(cli_args=argparse.Namespace(), kwargs={})
+        software.install()
 
     def get_path_to_spec_binary(self, software, compiler, dependencies):
         print("finding command string")

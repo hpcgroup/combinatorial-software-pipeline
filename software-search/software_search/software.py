@@ -110,9 +110,9 @@ class Software:
         self.concrete_spec = self.abstract_spec.concretized()
         self.hash = self.concrete_spec.dag_hash()
 
-    def install(self, cli_args, kwargs):
-        specs = [(self.abstract_spec, self.concrete_spec)]
-        install_specs(cli_args, kwargs, specs)
+    def install():
+        package = self.concrete_spec.package
+        package.do_install()
 
     def get_path_to_binary(self):
         return self.concrete_spec.prefix.bin.join(self.run_cmd)
