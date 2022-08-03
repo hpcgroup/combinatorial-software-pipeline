@@ -1,7 +1,7 @@
 #!/usr/bin/env spack-python
 from argparse import ArgumentParser
 import os, sys
-sys.path.append('..')
+sys.path.append('/usr/workspace/synk1/combinatorial-software-pipeline/software-search/')
 from software_search.software import Software
 from software_search.software_search import search
 from software_search.grid_search import GridSearch
@@ -22,11 +22,14 @@ def main():
     args = get_args()
 
     mpis = [
-        Software('openmpi', version='2.0.0')
+        Software('mvapich2').make_range(versions=['2.2','2.3','2.3.6']),
+        Software('openmpi').make_range(versions=['2.0.0','2.1.0','3.0.1','4.0.0','4.1.2']),
+        Software('intel-mpi').make_range(versions=['2017.0','2017.1','2018.0','2019.0','2019.8','5.1.3'])
     ]
 
     compilers = [
-	Compiler('gcc', version='4.9.3')
+	Compiler('gcc', version='4.9.3'),
+	Compiler('intel', version='19.0.4.227')
     ]
 
     main_software = Software('laghos', version='3.1', run_cmd='laghos',

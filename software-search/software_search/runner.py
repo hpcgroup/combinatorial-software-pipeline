@@ -80,10 +80,11 @@ class BashRunner():
 
         command_str = software.get_run_command()
         if self.use_mpi:
-            command_str = '{} -np {} {}'.format(self.mpi_cmd, self.num_ranks, command_str)
+            command_str = '{} -n {} {}'.format(self.mpi_cmd, self.num_ranks, command_str)
 
         if self.output_dir:
-            output_file_str = '{}/{}-run.stdout'.format(self.output_dir, software.hash)
+            current_date_time = time.strftime("%Y%m%d-%H%M%S")
+            output_file_str = '{}/{}-run-{}.stdout'.format(self.output_dir, software.hash, current_date_time)
             command_str = '{} > {}'.format(command_str, output_file_str)
 
         commands.append(command_str)
