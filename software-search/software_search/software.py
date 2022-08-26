@@ -1,7 +1,6 @@
 import copy
 import itertools
 from spack.spec import Spec
-from spack.cmd.install import install_specs
 from spack.build_environment import setup_package
 from .compiler import Compiler
 from .utilities import *
@@ -43,6 +42,8 @@ class Software:
         self.run_cmd = run_cmd if run_cmd else name
         self.run_args = run_args
         self.spec_hash = None
+        self.abstract_spec = None
+        self.concrete_spec = None
 
     
     def get_spack_spec(self, compiler=None, dependencies=None):
@@ -88,7 +89,8 @@ class Software:
         return self.get_spack_spec()
 
     def get_run_command(self):
-        cmd_str = '{} {}'.format(self.run_cmd, self.run_args)
+        run_cmd_full = self.concrete_spec.package.prefix.bin + '/' + self.run_cmd
+        cmd_str = '{} {}'.format(run_cmd_full, self.run_args)
         return cmd_str
 
     def get_run_command_api(self):
@@ -110,8 +112,11 @@ class Software:
         self.concrete_spec = self.abstract_spec.concretized()
         self.hash = self.concrete_spec.dag_hash()
 
-    def install():
+    def install(self):
         package = self.concrete_spec.package
+        #package.do_fetch()
+        #package.do_stage()
+        #package.do_patch()
         package.do_install()
 
     def get_path_to_binary(self):

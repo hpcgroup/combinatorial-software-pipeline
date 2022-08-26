@@ -4,6 +4,7 @@ import subprocess
 import argparse
 from spack.spec import Spec
 from spack.cmd.install import install_specs
+from spack.environment import environment
 from .utilities import listify
 
 class BashRunner():
@@ -120,10 +121,13 @@ class BashRunner():
         
 
     def run(self, software, compiler, dependencies):
+        # TODO  I'm not confident in this one
         #commands = self.get_commands(software, compiler, dependencies)
         commands = self.get_commands_using_api(software, compiler, dependencies)
         #commands = self.get_commands(software, compiler, dependencies)
-        software.setup_software()
+        #software.setup_software()
+        env = environment.active_environment()
+        software.concrete_spec.package.setup_run_environment(env=env)
         #software.setup_mpi()
 
         # run commands
