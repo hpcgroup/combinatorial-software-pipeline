@@ -1,7 +1,10 @@
 #!/usr/bin/env spack-python
 from argparse import ArgumentParser
-import os, sys
-sys.path.append('/usr/workspace/synk1/combinatorial-software-pipeline/software-search/')
+import os
+import sys
+software_search_path = os.path.dirname(os.getcwd())
+sys.path.append(software_search_path)
+import time
 from software_search.software import Software
 from software_search.software_search import search
 from software_search.grid_search import GridSearch
@@ -11,16 +14,19 @@ from software_search.runner import BashRunner
 
 
 def get_args():
+    default_path = os.path.join(software_search_path, 'data_collection', 'data', 
+                                'laghos', time.strftime("%Y%m%d"), 'raw_data')
     parser = ArgumentParser()
     parser.add_argument('-d', '--dry', action='store_true', help='Dry run.')
     parser.add_argument('-e', '--spack-env', type=str, help='Spack environment to install in.')
-    parser.add_argument('-o', '--output-dir', type=str, default='/usr/workspace/synk1/quartz_laghos_output', help='Directory to log output files into')
+    parser.add_argument('-o', '--output-dir', type=str, default=default_path, 
+                        help='Directory to log output files into')
+
     return parser.parse_args()
 
 
 def main():
     args = get_args()
-    print(sys.version)
 
     mpis = [
         Software('intel-mpi').make_range(versions=['2019.0','2019.8','2018.0','2017.1','5.1.3']),
