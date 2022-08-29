@@ -1,0 +1,1922 @@
+Generating abstract spec
+Concretizing spec: laghos@3.1%gcc@4.9.3 ^intel-mpi@2019.0
+==> Bootstrapping clingo from pre-built binaries
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.2/build_cache/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-dtwevigmwgke4g6ee5byktpmzmrp2kvx.spec.json
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.2/build_cache/linux-centos7-x86_64/gcc-10.2.1/clingo-bootstrap-spack/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-dtwevigmwgke4g6ee5byktpmzmrp2kvx.spack
+==> Installing "clingo-bootstrap@spack%gcc@10.2.1~docs~ipo+python+static_libstdcpp build_type=Release arch=linux-centos7-x86_64" from a buildcache
+Installing spec: laghos@3.1%gcc@4.9.3+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%gcc@4.9.3+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%gcc@4.9.3~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%gcc@4.9.3~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%gcc@4.9.3 arch=linux-rhel7-broadwell ^gdbm@1.19%gcc@4.9.3 arch=linux-rhel7-broadwell ^hypre@2.25.0%gcc@4.9.3~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^intel-mpi@2019.0%gcc@4.9.3~external-libfabric arch=linux-rhel7-broadwell ^metis@5.1.0%gcc@4.9.3~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%gcc@4.9.3~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%gcc@4.9.3~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%gcc@4.9.3~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%gcc@4.9.3+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%gcc@4.9.3+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%gcc@4.9.3 arch=linux-rhel7-broadwell ^zlib@1.2.12%gcc@4.9.3+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> intel-mpi@2019.0 : has external module in ['impi/2019.0']
+[+] /usr/tce/packages/impi/impi-2019.0-intel-19.0.4 (external intel-mpi-2019.0-czjpl5vmcemmpyhothvhcm6qtdrv55c3)
+==> Installing berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp
+==> No binary for berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/0c/0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8.tar.gz
+==> Applied patch /usr/WS2/synk1/spack/var/spack/repos/builtin/packages/berkeley-db/drop-docs.patch
+==> Ran patch() for berkeley-db
+==> berkeley-db: Executing phase: 'autoreconf'
+==> berkeley-db: Executing phase: 'configure'
+==> berkeley-db: Executing phase: 'build'
+==> berkeley-db: Executing phase: 'install'
+==> berkeley-db: Successfully installed berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp
+  Fetch: 0.37s.  Build: 35.80s.  Total: 36.17s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp
+[+] /usr (external diffutils-3.3-qkvwgi6csdl5o7afxzcs3ekwab74d3vm)
+[+] /usr (external pkg-config-0.27.1-65y6ay3w26cxuugz7y6bojf4psacdtjo)
+==> Installing zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt
+==> No binary for zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/91/91844808532e5ce316b3c010929493c0244f3d37593afd6de04f71821d5136d9.tar.gz
+==> Applied patch /usr/WS2/synk1/spack/var/spack/repos/builtin/packages/zlib/configure-cc.patch
+==> zlib: Executing phase: 'install'
+==> zlib: Successfully installed zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt
+  Fetch: 0.13s.  Build: 6.80s.  Total: 6.93s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt
+[+] /usr/tce (external cmake-3.14.5-6mchowjl7z2bo2dwbv2x7hospsyxgva6)
+==> Installing bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c
+==> No binary for bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/ab/ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269.tar.gz
+==> Ran patch() for bzip2
+==> bzip2: Executing phase: 'install'
+==> bzip2: Successfully installed bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c
+  Fetch: 0.11s.  Build: 2.55s.  Total: 2.66s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c
+==> Installing ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q
+==> No binary for ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q found: installing from source
+==> Fetching https://ftpmirror.gnu.org/ncurses/ncurses-6.3.tar.gz
+==> No patches needed for ncurses
+==> ncurses: Executing phase: 'autoreconf'
+==> ncurses: Executing phase: 'configure'
+==> ncurses: Executing phase: 'build'
+==> ncurses: Executing phase: 'install'
+==> ncurses: Successfully installed ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q
+  Fetch: 10.68s.  Build: 1m 34.45s.  Total: 1m 45.12s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q
+==> Installing metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa
+==> No binary for metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/76/76faebe03f6c963127dbb73c13eab58c9a3faeae48779f049066a21c087c5db2.tar.gz
+==> Applied patch /usr/WS2/synk1/spack/var/spack/repos/builtin/packages/metis/install_gklib_defs_rename.patch
+==> Ran patch() for metis
+==> metis: Executing phase: 'install'
+==> metis: Successfully installed metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa
+  Fetch: 0.64s.  Build: 6.47s.  Total: 7.11s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa
+==> Installing readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m
+==> No binary for readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m found: installing from source
+==> Fetching https://ftpmirror.gnu.org/readline/readline-8.1.2.tar.gz
+==> Ran patch() for readline
+==> readline: Executing phase: 'autoreconf'
+==> readline: Executing phase: 'configure'
+==> readline: Executing phase: 'build'
+==> readline: Executing phase: 'install'
+==> readline: Successfully installed readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m
+  Fetch: 9.21s.  Build: 14.90s.  Total: 24.11s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m
+==> Installing gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am
+==> No binary for gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/37/37ed12214122b972e18a0d94995039e57748191939ef74115b1d41d8811364bc.tar.gz
+==> No patches needed for gdbm
+==> gdbm: Executing phase: 'autoreconf'
+==> gdbm: Executing phase: 'configure'
+==> gdbm: Executing phase: 'build'
+==> gdbm: Executing phase: 'install'
+==> gdbm: Successfully installed gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am
+  Fetch: 0.13s.  Build: 12.66s.  Total: 12.79s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am
+==> Installing perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep
+==> No binary for perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/35/357951a491b0ba1ce3611263922feec78ccd581dddc24a446b033e25acf242a1.tar.gz
+==> Fetching https://mirror.spack.io/_source-cache/archive/9d/9da50e155df72bce55cb69f51f1dbb4b62d23740fb99f6178bb27f22ebdf8a46.tar.gz
+==> Moving resource stage
+	source: /var/tmp/synk1/spack-stage/resource-cpanm-nuuf7szt3pxanv7aqyf5jontuduxdlep/spack-src/
+	destination: /var/tmp/synk1/spack-stage/spack-stage-perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep/spack-src/cpanm/cpanm
+==> Ran patch() for perl
+==> perl: Executing phase: 'configure'
+==> perl: Executing phase: 'build'
+==> perl: Executing phase: 'install'
+==> perl: Successfully installed perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep
+  Fetch: 0.53s.  Build: 2m 51.33s.  Total: 2m 51.86s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep
+==> Installing openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc
+==> No binary for openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/84/8495c9affc536253648e942908e88e097f2ec7753ede55aca52e5dead3029e3c.tar.gz
+==> No patches needed for openblas
+==> openblas: Executing phase: 'edit'
+==> openblas: Executing phase: 'build'
+==> openblas: Executing phase: 'install'
+==> openblas: Successfully installed openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc
+  Fetch: 0.35s.  Build: 1m 43.98s.  Total: 1m 44.33s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc
+==> Installing hypre-2.25.0-paqkx2jr3bqawhgu3gb56wlr5sl3u3w3
+==> No binary for hypre-2.25.0-paqkx2jr3bqawhgu3gb56wlr5sl3u3w3 found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-paqkx2jr3bqawhgu3gb56wlr5sl3u3w3
+  Fetch: 0.68s.  Build: 34.52s.  Total: 35.21s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/hypre-2.25.0-paqkx2jr3bqawhgu3gb56wlr5sl3u3w3
+==> Installing mfem-4.4.0-ajzypqopyyub3ykwuommqqti6sqwjxt6
+==> No binary for mfem-4.4.0-ajzypqopyyub3ykwuommqqti6sqwjxt6 found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-ajzypqopyyub3ykwuommqqti6sqwjxt6
+  Fetch: 0.18s.  Build: 53.14s.  Total: 53.32s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/mfem-4.4.0-ajzypqopyyub3ykwuommqqti6sqwjxt6
+==> Installing laghos-3.1-varnzbgodqmkaldesxlg47zxivkcsfsf
+==> No binary for laghos-3.1-varnzbgodqmkaldesxlg47zxivkcsfsf found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-varnzbgodqmkaldesxlg47zxivkcsfsf
+  Fetch: 0.18s.  Build: 7.47s.  Total: 7.64s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-varnzbgodqmkaldesxlg47zxivkcsfsf
+Abort(1618319) on node 2 (rank 2 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 3 (rank 3 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 6 (rank 6 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 9 (rank 9 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 19 (rank 19 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 22 (rank 22 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 25 (rank 25 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 0 (rank 0 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 1 (rank 1 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 4 (rank 4 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 5 (rank 5 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 7 (rank 7 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 8 (rank 8 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 10 (rank 10 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 11 (rank 11 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 12 (rank 12 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 13 (rank 13 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 14 (rank 14 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 15 (rank 15 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 17 (rank 17 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 18 (rank 18 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 20 (rank 20 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 23 (rank 23 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 24 (rank 24 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 26 (rank 26 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 27 (rank 27 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 28 (rank 28 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 29 (rank 29 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 30 (rank 30 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 31 (rank 31 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 16 (rank 16 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 21 (rank 21 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+slurmstepd: error: *** STEP 11234535.0 ON quartz690 CANCELLED AT 2022-08-29T07:22:42 ***
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
+srun: error: quartz690: tasks 0-31: Killed
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-varnzbgodqmkaldesxlg47zxivkcsfsf/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/varnzbgodqmkaldesxlg47zxivkcsfsf-run-20220829-072239.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%gcc@4.9.3 ^intel-mpi@2019.8
+Installing spec: laghos@3.1%gcc@4.9.3+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%gcc@4.9.3+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%gcc@4.9.3~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%gcc@4.9.3~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%gcc@4.9.3 arch=linux-rhel7-broadwell ^gdbm@1.19%gcc@4.9.3 arch=linux-rhel7-broadwell ^hypre@2.25.0%gcc@4.9.3~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^intel-mpi@2019.8%gcc@4.9.3~external-libfabric arch=linux-rhel7-broadwell ^metis@5.1.0%gcc@4.9.3~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%gcc@4.9.3~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%gcc@4.9.3~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%gcc@4.9.3~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%gcc@4.9.3+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%gcc@4.9.3+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%gcc@4.9.3 arch=linux-rhel7-broadwell ^zlib@1.2.12%gcc@4.9.3+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> intel-mpi@2019.8 : has external module in ['impi/2019.8']
+[+] /usr/tce/packages/impi/impi-2019.8-intel-19.0.4 (external intel-mpi-2019.8-jvbbgrx4pvrnaexx7nknnujombmqsstw)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp
+[+] /usr (external diffutils-3.3-qkvwgi6csdl5o7afxzcs3ekwab74d3vm)
+[+] /usr (external pkg-config-0.27.1-65y6ay3w26cxuugz7y6bojf4psacdtjo)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt
+[+] /usr/tce (external cmake-3.14.5-6mchowjl7z2bo2dwbv2x7hospsyxgva6)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc
+==> Installing hypre-2.25.0-3k7ua6j25m7zucuoocawk7rpvtn533yn
+==> No binary for hypre-2.25.0-3k7ua6j25m7zucuoocawk7rpvtn533yn found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-3k7ua6j25m7zucuoocawk7rpvtn533yn
+  Fetch: 0.03s.  Build: 33.81s.  Total: 33.83s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/hypre-2.25.0-3k7ua6j25m7zucuoocawk7rpvtn533yn
+==> Installing mfem-4.4.0-a2fgm3vk5auffphhi2wyyyb6ee3rstds
+==> No binary for mfem-4.4.0-a2fgm3vk5auffphhi2wyyyb6ee3rstds found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-a2fgm3vk5auffphhi2wyyyb6ee3rstds
+  Fetch: 0.04s.  Build: 50.51s.  Total: 50.55s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/mfem-4.4.0-a2fgm3vk5auffphhi2wyyyb6ee3rstds
+==> Installing laghos-3.1-toudtnv2wddrwyxnil3wxpge65ddianc
+==> No binary for laghos-3.1-toudtnv2wddrwyxnil3wxpge65ddianc found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-toudtnv2wddrwyxnil3wxpge65ddianc
+  Fetch: 0.04s.  Build: 7.68s.  Total: 7.72s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-toudtnv2wddrwyxnil3wxpge65ddianc
+Abort(1091215) on node 3 (rank 3 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 8 (rank 8 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 9 (rank 9 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 13 (rank 13 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 14 (rank 14 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 16 (rank 16 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 17 (rank 17 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 18 (rank 18 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 21 (rank 21 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 22 (rank 22 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 24 (rank 24 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 25 (rank 25 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 27 (rank 27 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 30 (rank 30 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 0 (rank 0 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 1 (rank 1 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 2 (rank 2 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 4 (rank 4 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 5 (rank 5 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 6 (rank 6 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 7 (rank 7 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 10 (rank 10 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 11 (rank 11 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 12 (rank 12 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 15 (rank 15 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 19 (rank 19 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 20 (rank 20 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 23 (rank 23 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 26 (rank 26 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 28 (rank 28 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 29 (rank 29 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 31 (rank 31 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+slurmstepd: error: *** STEP 11234535.1 ON quartz690 CANCELLED AT 2022-08-29T07:25:23 ***
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
+srun: error: quartz690: tasks 0-31: Killed
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-toudtnv2wddrwyxnil3wxpge65ddianc/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/toudtnv2wddrwyxnil3wxpge65ddianc-run-20220829-072520.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%gcc@4.9.3 ^intel-mpi@2018.0
+Installing spec: laghos@3.1%gcc@4.9.3+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%gcc@4.9.3+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%gcc@4.9.3~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%gcc@4.9.3~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%gcc@4.9.3 arch=linux-rhel7-broadwell ^gdbm@1.19%gcc@4.9.3 arch=linux-rhel7-broadwell ^hypre@2.25.0%gcc@4.9.3~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^intel-mpi@2018.0%gcc@4.9.3~external-libfabric arch=linux-rhel7-broadwell ^metis@5.1.0%gcc@4.9.3~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%gcc@4.9.3~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%gcc@4.9.3~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%gcc@4.9.3~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%gcc@4.9.3+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%gcc@4.9.3+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%gcc@4.9.3 arch=linux-rhel7-broadwell ^zlib@1.2.12%gcc@4.9.3+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> intel-mpi@2018.0 : has external module in ['impi/2018.0']
+[+] /usr/tce/packages/impi/impi-2018.0-intel-19.0.4 (external intel-mpi-2018.0-wzwrc7t6x6h363udgcoxep2iqd6heuy2)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp
+[+] /usr (external diffutils-3.3-qkvwgi6csdl5o7afxzcs3ekwab74d3vm)
+[+] /usr (external pkg-config-0.27.1-65y6ay3w26cxuugz7y6bojf4psacdtjo)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt
+[+] /usr/tce (external cmake-3.14.5-6mchowjl7z2bo2dwbv2x7hospsyxgva6)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc
+==> Installing hypre-2.25.0-hgp2jr2n7yosqgkj3jx7zknkulcrp2td
+==> No binary for hypre-2.25.0-hgp2jr2n7yosqgkj3jx7zknkulcrp2td found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-hgp2jr2n7yosqgkj3jx7zknkulcrp2td
+  Fetch: 0.02s.  Build: 33.96s.  Total: 33.99s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/hypre-2.25.0-hgp2jr2n7yosqgkj3jx7zknkulcrp2td
+==> Installing mfem-4.4.0-2mk7da3lgrtfsg6jwkxky7y3r4jx67wl
+==> No binary for mfem-4.4.0-2mk7da3lgrtfsg6jwkxky7y3r4jx67wl found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-2mk7da3lgrtfsg6jwkxky7y3r4jx67wl
+  Fetch: 0.01s.  Build: 51.26s.  Total: 51.27s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/mfem-4.4.0-2mk7da3lgrtfsg6jwkxky7y3r4jx67wl
+==> Installing laghos-3.1-nphod7pjlei3ch5w7i57zq5klguav4c2
+==> No binary for laghos-3.1-nphod7pjlei3ch5w7i57zq5klguav4c2 found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-nphod7pjlei3ch5w7i57zq5klguav4c2
+  Fetch: 0.01s.  Build: 7.04s.  Total: 7.05s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-nphod7pjlei3ch5w7i57zq5klguav4c2
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-nphod7pjlei3ch5w7i57zq5klguav4c2/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/nphod7pjlei3ch5w7i57zq5klguav4c2-run-20220829-072802.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%gcc@4.9.3 ^intel-mpi@2017.1
+Installing spec: laghos@3.1%gcc@4.9.3+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%gcc@4.9.3+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%gcc@4.9.3~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%gcc@4.9.3~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%gcc@4.9.3 arch=linux-rhel7-broadwell ^gdbm@1.19%gcc@4.9.3 arch=linux-rhel7-broadwell ^hypre@2.25.0%gcc@4.9.3~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^intel-mpi@2017.1%gcc@4.9.3~external-libfabric arch=linux-rhel7-broadwell ^metis@5.1.0%gcc@4.9.3~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%gcc@4.9.3~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%gcc@4.9.3~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%gcc@4.9.3~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%gcc@4.9.3+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%gcc@4.9.3+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%gcc@4.9.3 arch=linux-rhel7-broadwell ^zlib@1.2.12%gcc@4.9.3+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> intel-mpi@2017.1 : has external module in ['impi/2017.1']
+[+] /usr/tce/packages/impi/impi-2017.1-intel-19.0.4 (external intel-mpi-2017.1-o53p5rsp7pe53wz4q6m7vu44sev6ce4p)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp
+[+] /usr (external diffutils-3.3-qkvwgi6csdl5o7afxzcs3ekwab74d3vm)
+[+] /usr (external pkg-config-0.27.1-65y6ay3w26cxuugz7y6bojf4psacdtjo)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt
+[+] /usr/tce (external cmake-3.14.5-6mchowjl7z2bo2dwbv2x7hospsyxgva6)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc
+==> Installing hypre-2.25.0-tajoqkuuqklcx4pilfeosxt4bn7f5nik
+==> No binary for hypre-2.25.0-tajoqkuuqklcx4pilfeosxt4bn7f5nik found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-tajoqkuuqklcx4pilfeosxt4bn7f5nik
+  Fetch: 0.03s.  Build: 37.01s.  Total: 37.03s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/hypre-2.25.0-tajoqkuuqklcx4pilfeosxt4bn7f5nik
+==> Installing mfem-4.4.0-dnz566bxs5qbcivku7ifm66obcukvw5j
+==> No binary for mfem-4.4.0-dnz566bxs5qbcivku7ifm66obcukvw5j found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-dnz566bxs5qbcivku7ifm66obcukvw5j
+  Fetch: 0.02s.  Build: 50.77s.  Total: 50.79s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/mfem-4.4.0-dnz566bxs5qbcivku7ifm66obcukvw5j
+==> Installing laghos-3.1-qiyndkboc3wgjdg2edgkqlv4noulkoui
+==> No binary for laghos-3.1-qiyndkboc3wgjdg2edgkqlv4noulkoui found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-qiyndkboc3wgjdg2edgkqlv4noulkoui
+  Fetch: 0.01s.  Build: 7.17s.  Total: 7.18s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-qiyndkboc3wgjdg2edgkqlv4noulkoui
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-qiyndkboc3wgjdg2edgkqlv4noulkoui/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/qiyndkboc3wgjdg2edgkqlv4noulkoui-run-20220829-073055.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%gcc@4.9.3 ^intel-mpi@5.1.3
+Installing spec: laghos@3.1%gcc@4.9.3+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%gcc@4.9.3+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%gcc@4.9.3~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%gcc@4.9.3~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%gcc@4.9.3 arch=linux-rhel7-broadwell ^gdbm@1.19%gcc@4.9.3 arch=linux-rhel7-broadwell ^hypre@2.25.0%gcc@4.9.3~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^intel-mpi@5.1.3%gcc@4.9.3~external-libfabric arch=linux-rhel7-broadwell ^metis@5.1.0%gcc@4.9.3~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%gcc@4.9.3~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%gcc@4.9.3~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%gcc@4.9.3~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%gcc@4.9.3+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%gcc@4.9.3+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%gcc@4.9.3 arch=linux-rhel7-broadwell ^zlib@1.2.12%gcc@4.9.3+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> intel-mpi@5.1.3 : has external module in ['impi/5.1.3']
+[+] /usr/tce/packages/impi/impi-5.1.3-intel-19.0.4 (external intel-mpi-5.1.3-gx2txq5orhnxcxntssfslxgsrbn2ke7n)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp
+[+] /usr (external diffutils-3.3-qkvwgi6csdl5o7afxzcs3ekwab74d3vm)
+[+] /usr (external pkg-config-0.27.1-65y6ay3w26cxuugz7y6bojf4psacdtjo)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt
+[+] /usr/tce (external cmake-3.14.5-6mchowjl7z2bo2dwbv2x7hospsyxgva6)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc
+==> Installing hypre-2.25.0-mcthcc6zede2avsmw24ec64uuwukeiq5
+==> No binary for hypre-2.25.0-mcthcc6zede2avsmw24ec64uuwukeiq5 found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-mcthcc6zede2avsmw24ec64uuwukeiq5
+  Fetch: 0.03s.  Build: 36.38s.  Total: 36.41s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/hypre-2.25.0-mcthcc6zede2avsmw24ec64uuwukeiq5
+==> Installing mfem-4.4.0-e3yv6mggpvmhfmqjpzasnyh5yws3wa5i
+==> No binary for mfem-4.4.0-e3yv6mggpvmhfmqjpzasnyh5yws3wa5i found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-e3yv6mggpvmhfmqjpzasnyh5yws3wa5i
+  Fetch: 0.01s.  Build: 50.42s.  Total: 50.44s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/mfem-4.4.0-e3yv6mggpvmhfmqjpzasnyh5yws3wa5i
+==> Installing laghos-3.1-3k6li2ydo2anya2smoraajmn3zvfp6zb
+==> No binary for laghos-3.1-3k6li2ydo2anya2smoraajmn3zvfp6zb found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-3k6li2ydo2anya2smoraajmn3zvfp6zb
+  Fetch: 0.01s.  Build: 7.21s.  Total: 7.22s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-3k6li2ydo2anya2smoraajmn3zvfp6zb
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-3k6li2ydo2anya2smoraajmn3zvfp6zb/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/3k6li2ydo2anya2smoraajmn3zvfp6zb-run-20220829-073349.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%gcc@4.9.3 ^mvapich2@2.2
+Installing spec: laghos@3.1%gcc@4.9.3+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%gcc@4.9.3+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%gcc@4.9.3~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%gcc@4.9.3~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%gcc@4.9.3 arch=linux-rhel7-broadwell ^gdbm@1.19%gcc@4.9.3 arch=linux-rhel7-broadwell ^hypre@2.25.0%gcc@4.9.3~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^metis@5.1.0%gcc@4.9.3~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%gcc@4.9.3~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^mvapich2@2.2%gcc@4.9.3~alloca~cuda~debug+regcache+wrapperrpath ch3_rank_bits=32 fabrics=mrail file_systems=auto process_managers=auto threads=multiple arch=linux-rhel7-broadwell ^ncurses@6.3%gcc@4.9.3~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%gcc@4.9.3~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%gcc@4.9.3+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%gcc@4.9.3+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%gcc@4.9.3 arch=linux-rhel7-broadwell ^zlib@1.2.12%gcc@4.9.3+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> mvapich2@2.2 : has external module in ['mvapich2/2.2']
+[+] /usr/tce/packages/mvapich2/mvapich2-2.2-intel-19.0.4 (external mvapich2-2.2-h6ezavmlbrt3x6cp5qnwz57zsu5srfrh)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp
+[+] /usr (external diffutils-3.3-qkvwgi6csdl5o7afxzcs3ekwab74d3vm)
+[+] /usr (external pkg-config-0.27.1-65y6ay3w26cxuugz7y6bojf4psacdtjo)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt
+[+] /usr/tce (external cmake-3.14.5-6mchowjl7z2bo2dwbv2x7hospsyxgva6)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc
+==> Installing hypre-2.25.0-epvbb6mlke6375xw374dqpvlpa7hr4ai
+==> No binary for hypre-2.25.0-epvbb6mlke6375xw374dqpvlpa7hr4ai found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-epvbb6mlke6375xw374dqpvlpa7hr4ai
+  Fetch: 0.02s.  Build: 34.73s.  Total: 34.75s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/hypre-2.25.0-epvbb6mlke6375xw374dqpvlpa7hr4ai
+==> Installing mfem-4.4.0-iyq5w2scc2vgjmz2ynuovspepipgaxqg
+==> No binary for mfem-4.4.0-iyq5w2scc2vgjmz2ynuovspepipgaxqg found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-iyq5w2scc2vgjmz2ynuovspepipgaxqg
+  Fetch: 0.01s.  Build: 50.55s.  Total: 50.57s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/mfem-4.4.0-iyq5w2scc2vgjmz2ynuovspepipgaxqg
+==> Installing laghos-3.1-kdsleurhqst3pzwigt4gnckpfeb2ykdv
+==> No binary for laghos-3.1-kdsleurhqst3pzwigt4gnckpfeb2ykdv found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-kdsleurhqst3pzwigt4gnckpfeb2ykdv
+  Fetch: 0.01s.  Build: 7.30s.  Total: 7.31s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-kdsleurhqst3pzwigt4gnckpfeb2ykdv
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-kdsleurhqst3pzwigt4gnckpfeb2ykdv/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/kdsleurhqst3pzwigt4gnckpfeb2ykdv-run-20220829-073641.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%gcc@4.9.3 ^mvapich2@2.3
+Installing spec: laghos@3.1%gcc@4.9.3+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%gcc@4.9.3+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%gcc@4.9.3~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%gcc@4.9.3~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%gcc@4.9.3 arch=linux-rhel7-broadwell ^gdbm@1.19%gcc@4.9.3 arch=linux-rhel7-broadwell ^hypre@2.25.0%gcc@4.9.3~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^metis@5.1.0%gcc@4.9.3~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%gcc@4.9.3~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^mvapich2@2.3%gcc@4.9.3~alloca~cuda~debug+regcache+wrapperrpath ch3_rank_bits=32 fabrics=mrail file_systems=auto process_managers=auto threads=multiple arch=linux-rhel7-broadwell ^ncurses@6.3%gcc@4.9.3~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%gcc@4.9.3~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%gcc@4.9.3+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%gcc@4.9.3+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%gcc@4.9.3 arch=linux-rhel7-broadwell ^zlib@1.2.12%gcc@4.9.3+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> mvapich2@2.3 : has external module in ['mvapich2/2.3']
+[+] /usr/tce/packages/mvapich2/mvapich2-2.3-intel-19.0.4 (external mvapich2-2.3-x3pr5djnrndzmeohvofsc73v5jskw52p)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp
+[+] /usr (external diffutils-3.3-qkvwgi6csdl5o7afxzcs3ekwab74d3vm)
+[+] /usr (external pkg-config-0.27.1-65y6ay3w26cxuugz7y6bojf4psacdtjo)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt
+[+] /usr/tce (external cmake-3.14.5-6mchowjl7z2bo2dwbv2x7hospsyxgva6)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc
+==> Installing hypre-2.25.0-7r2h37iq5crhkbtxy6t55ck2cs5ftgg3
+==> No binary for hypre-2.25.0-7r2h37iq5crhkbtxy6t55ck2cs5ftgg3 found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-7r2h37iq5crhkbtxy6t55ck2cs5ftgg3
+  Fetch: 0.02s.  Build: 34.92s.  Total: 34.94s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/hypre-2.25.0-7r2h37iq5crhkbtxy6t55ck2cs5ftgg3
+==> Installing mfem-4.4.0-qfiedu3l4w2eledng35c36lygcwe4gob
+==> No binary for mfem-4.4.0-qfiedu3l4w2eledng35c36lygcwe4gob found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-qfiedu3l4w2eledng35c36lygcwe4gob
+  Fetch: 0.01s.  Build: 50.46s.  Total: 50.48s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/mfem-4.4.0-qfiedu3l4w2eledng35c36lygcwe4gob
+==> Installing laghos-3.1-t5wiwpfkx4ojuqxnucwwszi4xnfnb7ut
+==> No binary for laghos-3.1-t5wiwpfkx4ojuqxnucwwszi4xnfnb7ut found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-t5wiwpfkx4ojuqxnucwwszi4xnfnb7ut
+  Fetch: 0.01s.  Build: 7.50s.  Total: 7.51s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-t5wiwpfkx4ojuqxnucwwszi4xnfnb7ut
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-t5wiwpfkx4ojuqxnucwwszi4xnfnb7ut/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/t5wiwpfkx4ojuqxnucwwszi4xnfnb7ut-run-20220829-073936.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%gcc@4.9.3 ^mvapich2@2.3.6
+Installing spec: laghos@3.1%gcc@4.9.3+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%gcc@4.9.3+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%gcc@4.9.3~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%gcc@4.9.3~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%gcc@4.9.3 arch=linux-rhel7-broadwell ^gdbm@1.19%gcc@4.9.3 arch=linux-rhel7-broadwell ^hypre@2.25.0%gcc@4.9.3~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^metis@5.1.0%gcc@4.9.3~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%gcc@4.9.3~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^mvapich2@2.3.6%gcc@4.9.3~alloca~cuda~debug+regcache+wrapperrpath ch3_rank_bits=32 fabrics=mrail file_systems=auto process_managers=auto threads=multiple arch=linux-rhel7-broadwell ^ncurses@6.3%gcc@4.9.3~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%gcc@4.9.3~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%gcc@4.9.3+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%gcc@4.9.3+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%gcc@4.9.3 arch=linux-rhel7-broadwell ^zlib@1.2.12%gcc@4.9.3+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> mvapich2@2.3.6 : has external module in ['mvapich2/2.3.6']
+[+] /usr/tce/packages/mvapich2/mvapich2-2.3.6-intel-19.0.4 (external mvapich2-2.3.6-k27s5si45r6iqiwe5mmcnzui2mkglrmn)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp
+[+] /usr (external diffutils-3.3-qkvwgi6csdl5o7afxzcs3ekwab74d3vm)
+[+] /usr (external pkg-config-0.27.1-65y6ay3w26cxuugz7y6bojf4psacdtjo)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt
+[+] /usr/tce (external cmake-3.14.5-6mchowjl7z2bo2dwbv2x7hospsyxgva6)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc
+==> Installing hypre-2.25.0-lperyigmew722ix56tfsarjqt5gb524f
+==> No binary for hypre-2.25.0-lperyigmew722ix56tfsarjqt5gb524f found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-lperyigmew722ix56tfsarjqt5gb524f
+  Fetch: 0.03s.  Build: 34.20s.  Total: 34.22s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/hypre-2.25.0-lperyigmew722ix56tfsarjqt5gb524f
+==> Installing mfem-4.4.0-5fayy74jothisubhas6qig5jlbf5ao5s
+==> No binary for mfem-4.4.0-5fayy74jothisubhas6qig5jlbf5ao5s found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-5fayy74jothisubhas6qig5jlbf5ao5s
+  Fetch: 0.01s.  Build: 51.66s.  Total: 51.68s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/mfem-4.4.0-5fayy74jothisubhas6qig5jlbf5ao5s
+==> Installing laghos-3.1-hormryhl45nxrgbo7ctt5gbtafddi53e
+==> No binary for laghos-3.1-hormryhl45nxrgbo7ctt5gbtafddi53e found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-hormryhl45nxrgbo7ctt5gbtafddi53e
+  Fetch: 0.01s.  Build: 7.92s.  Total: 7.92s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-hormryhl45nxrgbo7ctt5gbtafddi53e
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-hormryhl45nxrgbo7ctt5gbtafddi53e/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/hormryhl45nxrgbo7ctt5gbtafddi53e-run-20220829-074229.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%gcc@4.9.3 ^openmpi@2.0.0
+Installing spec: laghos@3.1%gcc@4.9.3+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%gcc@4.9.3+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%gcc@4.9.3~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%gcc@4.9.3~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%gcc@4.9.3 arch=linux-rhel7-broadwell ^gdbm@1.19%gcc@4.9.3 arch=linux-rhel7-broadwell ^hypre@2.25.0%gcc@4.9.3~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^metis@5.1.0%gcc@4.9.3~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%gcc@4.9.3~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%gcc@4.9.3~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%gcc@4.9.3~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^openmpi@2.0.0%gcc@4.9.3~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker+romio+rsh~singularity+static~thread_multiple+vt+wrapper-rpath fabrics=none patches=51e39ef,d26978e,d7f08ae schedulers=none arch=linux-rhel7-broadwell ^perl@5.34.1%gcc@4.9.3+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%gcc@4.9.3+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%gcc@4.9.3 arch=linux-rhel7-broadwell ^zlib@1.2.12%gcc@4.9.3+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp
+[+] /usr (external diffutils-3.3-qkvwgi6csdl5o7afxzcs3ekwab74d3vm)
+[+] /usr (external pkg-config-0.27.1-65y6ay3w26cxuugz7y6bojf4psacdtjo)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt
+==> openmpi@2.0.0 : has external module in ['openmpi/2.0.0']
+[+] /usr/tce/packages/openmpi/openmpi-2.0.0-intel-19.0.4 (external openmpi-2.0.0-gsckwmjpvavr6zjth7tots3ut7jgckss)
+[+] /usr/tce (external cmake-3.14.5-6mchowjl7z2bo2dwbv2x7hospsyxgva6)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc
+==> Installing hypre-2.25.0-sisl4kknwyy4ekyjlotayetqdhc3yda2
+==> No binary for hypre-2.25.0-sisl4kknwyy4ekyjlotayetqdhc3yda2 found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-sisl4kknwyy4ekyjlotayetqdhc3yda2
+  Fetch: 0.02s.  Build: 31.77s.  Total: 31.79s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/hypre-2.25.0-sisl4kknwyy4ekyjlotayetqdhc3yda2
+==> Installing mfem-4.4.0-m4mvylszkchmq4aixkejnr3jpe3k4dox
+==> No binary for mfem-4.4.0-m4mvylszkchmq4aixkejnr3jpe3k4dox found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-m4mvylszkchmq4aixkejnr3jpe3k4dox
+  Fetch: 0.01s.  Build: 57.64s.  Total: 57.66s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/mfem-4.4.0-m4mvylszkchmq4aixkejnr3jpe3k4dox
+==> Installing laghos-3.1-x3k2j2e2afzn65kjk42kwo5sfmwwytvw
+==> No binary for laghos-3.1-x3k2j2e2afzn65kjk42kwo5sfmwwytvw found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-x3k2j2e2afzn65kjk42kwo5sfmwwytvw
+  Fetch: 0.01s.  Build: 8.30s.  Total: 8.31s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-x3k2j2e2afzn65kjk42kwo5sfmwwytvw
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-x3k2j2e2afzn65kjk42kwo5sfmwwytvw/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/x3k2j2e2afzn65kjk42kwo5sfmwwytvw-run-20220829-074523.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%gcc@4.9.3 ^openmpi@2.1.0
+Installing spec: laghos@3.1%gcc@4.9.3+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%gcc@4.9.3+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%gcc@4.9.3~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%gcc@4.9.3~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%gcc@4.9.3 arch=linux-rhel7-broadwell ^gdbm@1.19%gcc@4.9.3 arch=linux-rhel7-broadwell ^hypre@2.25.0%gcc@4.9.3~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^metis@5.1.0%gcc@4.9.3~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%gcc@4.9.3~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%gcc@4.9.3~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%gcc@4.9.3~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^openmpi@2.1.0%gcc@4.9.3~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker+romio+rsh~singularity+static~thread_multiple+vt+wrapper-rpath fabrics=none patches=51e39ef,d7f08ae schedulers=none arch=linux-rhel7-broadwell ^perl@5.34.1%gcc@4.9.3+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%gcc@4.9.3+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%gcc@4.9.3 arch=linux-rhel7-broadwell ^zlib@1.2.12%gcc@4.9.3+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp
+[+] /usr (external diffutils-3.3-qkvwgi6csdl5o7afxzcs3ekwab74d3vm)
+[+] /usr (external pkg-config-0.27.1-65y6ay3w26cxuugz7y6bojf4psacdtjo)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt
+==> openmpi@2.1.0 : has external module in ['openmpi/2.1.0']
+[+] /usr/tce/packages/openmpi/openmpi-2.1.0-intel-19.0.4 (external openmpi-2.1.0-rcufznqmufragwu7dpbcgj72d3oq25xh)
+[+] /usr/tce (external cmake-3.14.5-6mchowjl7z2bo2dwbv2x7hospsyxgva6)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc
+==> Installing hypre-2.25.0-tjcfr7pyv6tnsvyso3e3y37jgwqllono
+==> No binary for hypre-2.25.0-tjcfr7pyv6tnsvyso3e3y37jgwqllono found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-tjcfr7pyv6tnsvyso3e3y37jgwqllono
+  Fetch: 0.02s.  Build: 31.64s.  Total: 31.66s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/hypre-2.25.0-tjcfr7pyv6tnsvyso3e3y37jgwqllono
+==> Installing mfem-4.4.0-wrv5q4ldrd5dv6w3xt7wfuvjtxg45nc6
+==> No binary for mfem-4.4.0-wrv5q4ldrd5dv6w3xt7wfuvjtxg45nc6 found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-wrv5q4ldrd5dv6w3xt7wfuvjtxg45nc6
+  Fetch: 0.01s.  Build: 57.20s.  Total: 57.21s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/mfem-4.4.0-wrv5q4ldrd5dv6w3xt7wfuvjtxg45nc6
+==> Installing laghos-3.1-youvaj7u76775eckfzvnta4i3rnaqmtu
+==> No binary for laghos-3.1-youvaj7u76775eckfzvnta4i3rnaqmtu found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-youvaj7u76775eckfzvnta4i3rnaqmtu
+  Fetch: 0.01s.  Build: 8.34s.  Total: 8.35s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-youvaj7u76775eckfzvnta4i3rnaqmtu
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-youvaj7u76775eckfzvnta4i3rnaqmtu/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/youvaj7u76775eckfzvnta4i3rnaqmtu-run-20220829-074827.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%gcc@4.9.3 ^openmpi@3.0.1
+Installing spec: laghos@3.1%gcc@4.9.3+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%gcc@4.9.3+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%gcc@4.9.3~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%gcc@4.9.3~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%gcc@4.9.3 arch=linux-rhel7-broadwell ^gdbm@1.19%gcc@4.9.3 arch=linux-rhel7-broadwell ^hypre@2.25.0%gcc@4.9.3~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^metis@5.1.0%gcc@4.9.3~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%gcc@4.9.3~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%gcc@4.9.3~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%gcc@4.9.3~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^openmpi@3.0.1%gcc@4.9.3~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker+romio+rsh~singularity+static+vt+wrapper-rpath fabrics=none patches=32effdf,51e39ef schedulers=none arch=linux-rhel7-broadwell ^perl@5.34.1%gcc@4.9.3+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%gcc@4.9.3+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%gcc@4.9.3 arch=linux-rhel7-broadwell ^zlib@1.2.12%gcc@4.9.3+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp
+[+] /usr (external diffutils-3.3-qkvwgi6csdl5o7afxzcs3ekwab74d3vm)
+[+] /usr (external pkg-config-0.27.1-65y6ay3w26cxuugz7y6bojf4psacdtjo)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt
+==> openmpi@3.0.1 : has external module in ['openmpi/3.0.1']
+[+] /usr/tce/packages/openmpi/openmpi-3.0.1-intel-19.0.4 (external openmpi-3.0.1-kub23cpmwgapb7owfmewun2lcrviup5w)
+[+] /usr/tce (external cmake-3.14.5-6mchowjl7z2bo2dwbv2x7hospsyxgva6)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc
+==> Installing hypre-2.25.0-fzqro7u4jxolr2mll3hq26su4rm7zick
+==> No binary for hypre-2.25.0-fzqro7u4jxolr2mll3hq26su4rm7zick found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-fzqro7u4jxolr2mll3hq26su4rm7zick
+  Fetch: 0.02s.  Build: 32.05s.  Total: 32.08s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/hypre-2.25.0-fzqro7u4jxolr2mll3hq26su4rm7zick
+==> Installing mfem-4.4.0-ixhmrqvxcin7lhnobphpy3kh73luteah
+==> No binary for mfem-4.4.0-ixhmrqvxcin7lhnobphpy3kh73luteah found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-ixhmrqvxcin7lhnobphpy3kh73luteah
+  Fetch: 0.01s.  Build: 57.42s.  Total: 57.44s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/mfem-4.4.0-ixhmrqvxcin7lhnobphpy3kh73luteah
+==> Installing laghos-3.1-rygqypqize3sl2xzxikfm2ciaggfbn4a
+==> No binary for laghos-3.1-rygqypqize3sl2xzxikfm2ciaggfbn4a found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-rygqypqize3sl2xzxikfm2ciaggfbn4a
+  Fetch: 0.01s.  Build: 8.37s.  Total: 8.38s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-rygqypqize3sl2xzxikfm2ciaggfbn4a
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-rygqypqize3sl2xzxikfm2ciaggfbn4a/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/rygqypqize3sl2xzxikfm2ciaggfbn4a-run-20220829-075126.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%gcc@4.9.3 ^openmpi@4.0.0
+Installing spec: laghos@3.1%gcc@4.9.3+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%gcc@4.9.3+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%gcc@4.9.3~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%gcc@4.9.3~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%gcc@4.9.3 arch=linux-rhel7-broadwell ^gdbm@1.19%gcc@4.9.3 arch=linux-rhel7-broadwell ^hypre@2.25.0%gcc@4.9.3~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^metis@5.1.0%gcc@4.9.3~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%gcc@4.9.3~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%gcc@4.9.3~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%gcc@4.9.3~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^openmpi@4.0.0%gcc@4.9.3~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker+romio+rsh~singularity+static+vt+wrapper-rpath fabrics=none patches=073477a,60ce20b schedulers=none arch=linux-rhel7-broadwell ^perl@5.34.1%gcc@4.9.3+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%gcc@4.9.3+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%gcc@4.9.3 arch=linux-rhel7-broadwell ^zlib@1.2.12%gcc@4.9.3+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/berkeley-db-18.1.40-boodx5ou7sdhzj34lghj7k33omfw57bp
+[+] /usr (external diffutils-3.3-qkvwgi6csdl5o7afxzcs3ekwab74d3vm)
+[+] /usr (external pkg-config-0.27.1-65y6ay3w26cxuugz7y6bojf4psacdtjo)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/zlib-1.2.12-p75qddqvbyfy55tvakhbleyyo2xgszqt
+==> openmpi@4.0.0 : has external module in ['openmpi/4.0.0']
+[+] /usr/tce/packages/openmpi/openmpi-4.0.0-intel-19.0.4 (external openmpi-4.0.0-gvjqldzdn3nu5335sbyuke4pu7o7aqsf)
+[+] /usr/tce (external cmake-3.14.5-6mchowjl7z2bo2dwbv2x7hospsyxgva6)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/bzip2-1.0.8-r3oqgfswdu7brmstylmijw3jfidobw6c
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/ncurses-6.3-jtemjgoghlfj44zqvxdcnmzqojrwov7q
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/metis-5.1.0-ejve7icpjjpztl2ubjlcds7rlhcigupa
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/readline-8.1.2-xw6zoy54xlbq5qws62swcm4u5c7mqn4m
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/gdbm-1.19-w2nc4hjoskh6b5bnly6dz7hsz53wc3am
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/perl-5.34.1-nuuf7szt3pxanv7aqyf5jontuduxdlep
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/openblas-0.3.20-at6lcut3d4nwssbfvrqi3iyutqivqgmc
+==> Installing hypre-2.25.0-z5d4mradoamhsf53gaycgnjh6vepgjxy
+==> No binary for hypre-2.25.0-z5d4mradoamhsf53gaycgnjh6vepgjxy found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-z5d4mradoamhsf53gaycgnjh6vepgjxy
+  Fetch: 0.03s.  Build: 31.92s.  Total: 31.95s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/hypre-2.25.0-z5d4mradoamhsf53gaycgnjh6vepgjxy
+==> Installing mfem-4.4.0-rxglfbcmmw6mphjxmnuqmwcsgt6r25na
+==> No binary for mfem-4.4.0-rxglfbcmmw6mphjxmnuqmwcsgt6r25na found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-rxglfbcmmw6mphjxmnuqmwcsgt6r25na
+  Fetch: 0.01s.  Build: 57.26s.  Total: 57.28s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/mfem-4.4.0-rxglfbcmmw6mphjxmnuqmwcsgt6r25na
+==> Installing laghos-3.1-kxg2hhko4oj46xm7a3zfu5mvqkz6in2o
+==> No binary for laghos-3.1-kxg2hhko4oj46xm7a3zfu5mvqkz6in2o found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-kxg2hhko4oj46xm7a3zfu5mvqkz6in2o
+  Fetch: 0.01s.  Build: 8.44s.  Total: 8.45s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-kxg2hhko4oj46xm7a3zfu5mvqkz6in2o
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/gcc-4.9.3/laghos-3.1-kxg2hhko4oj46xm7a3zfu5mvqkz6in2o/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/kxg2hhko4oj46xm7a3zfu5mvqkz6in2o-run-20220829-075430.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%intel@19.0.4.227 ^intel-mpi@2019.0
+Installing spec: laghos@3.1%intel@19.0.4.227+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%intel@19.0.4.227+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%intel@19.0.4.227~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%intel@19.0.4.227~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%intel@19.0.4.227 arch=linux-rhel7-broadwell ^gdbm@1.19%intel@19.0.4.227 arch=linux-rhel7-broadwell ^hypre@2.25.0%intel@19.0.4.227~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^intel-mpi@2019.0%intel@19.0.4.227~external-libfabric arch=linux-rhel7-broadwell ^metis@5.1.0%intel@19.0.4.227~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%intel@19.0.4.227~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%intel@19.0.4.227~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%intel@19.0.4.227~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%intel@19.0.4.227+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%intel@19.0.4.227+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%intel@19.0.4.227 arch=linux-rhel7-broadwell ^zlib@1.2.12%intel@19.0.4.227+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> intel-mpi@2019.0 : has external module in ['impi/2019.0']
+[+] /usr/tce/packages/impi/impi-2019.0-intel-19.0.4 (external intel-mpi-2019.0-ngafnv3nlzaaszna3erotyjmsklcyl4s)
+==> Installing berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo
+==> No binary for berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/0c/0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8.tar.gz
+==> Applied patch /usr/WS2/synk1/spack/var/spack/repos/builtin/packages/berkeley-db/drop-docs.patch
+==> Ran patch() for berkeley-db
+==> berkeley-db: Executing phase: 'autoreconf'
+==> berkeley-db: Executing phase: 'configure'
+==> berkeley-db: Executing phase: 'build'
+==> berkeley-db: Executing phase: 'install'
+==> berkeley-db: Successfully installed berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo
+  Fetch: 0.09s.  Build: 53.40s.  Total: 53.48s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo
+[+] /usr (external diffutils-3.3-6nrqjprm5el7bmtotkdq7txgo52exsst)
+[+] /usr (external pkg-config-0.27.1-sizxcbdws23kouyheixk6y4yltnnmqoh)
+==> Installing zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz
+==> No binary for zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/91/91844808532e5ce316b3c010929493c0244f3d37593afd6de04f71821d5136d9.tar.gz
+==> Applied patch /usr/WS2/synk1/spack/var/spack/repos/builtin/packages/zlib/configure-cc.patch
+==> zlib: Executing phase: 'install'
+==> zlib: Successfully installed zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz
+  Fetch: 0.01s.  Build: 4.03s.  Total: 4.04s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz
+[+] /usr/tce (external cmake-3.14.5-fqkfwj7dwlrjwh4egvocbo62kg3vueyp)
+==> Installing bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln
+==> No binary for bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/ab/ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269.tar.gz
+==> Ran patch() for bzip2
+==> bzip2: Executing phase: 'install'
+==> bzip2: Successfully installed bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln
+  Fetch: 0.01s.  Build: 3.98s.  Total: 3.99s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln
+==> Installing ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg
+==> No binary for ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/97/97fc51ac2b085d4cde31ef4d2c3122c21abc217e9090a43a30fc5ec21684e059.tar.gz
+==> No patches needed for ncurses
+==> ncurses: Executing phase: 'autoreconf'
+==> ncurses: Executing phase: 'configure'
+==> ncurses: Executing phase: 'build'
+==> ncurses: Executing phase: 'install'
+==> ncurses: Successfully installed ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg
+  Fetch: 0.01s.  Build: 2m 9.36s.  Total: 2m 9.37s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg
+==> Installing metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3
+==> No binary for metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3 found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/76/76faebe03f6c963127dbb73c13eab58c9a3faeae48779f049066a21c087c5db2.tar.gz
+==> Applied patch /usr/WS2/synk1/spack/var/spack/repos/builtin/packages/metis/install_gklib_defs_rename.patch
+==> Ran patch() for metis
+==> metis: Executing phase: 'install'
+==> metis: Successfully installed metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3
+  Fetch: 0.12s.  Build: 10.40s.  Total: 10.52s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3
+==> Installing readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh
+==> No binary for readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/75/7589a2381a8419e68654a47623ce7dfcb756815c8fee726b98f90bf668af7bc6.tar.gz
+==> Ran patch() for readline
+==> readline: Executing phase: 'autoreconf'
+==> readline: Executing phase: 'configure'
+==> readline: Executing phase: 'build'
+==> readline: Executing phase: 'install'
+==> readline: Successfully installed readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh
+  Fetch: 0.01s.  Build: 23.00s.  Total: 23.01s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh
+==> Installing gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu
+==> No binary for gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37ed12214122b972e18a0d94995039e57748191939ef74115b1d41d8811364bc.tar.gz
+==> No patches needed for gdbm
+==> gdbm: Executing phase: 'autoreconf'
+==> gdbm: Executing phase: 'configure'
+==> gdbm: Executing phase: 'build'
+==> gdbm: Executing phase: 'install'
+==> gdbm: Successfully installed gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu
+  Fetch: 0.01s.  Build: 19.88s.  Total: 19.88s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu
+==> Installing perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl
+==> No binary for perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/35/357951a491b0ba1ce3611263922feec78ccd581dddc24a446b033e25acf242a1.tar.gz
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/9d/9da50e155df72bce55cb69f51f1dbb4b62d23740fb99f6178bb27f22ebdf8a46.tar.gz
+==> Moving resource stage
+	source: /var/tmp/synk1/spack-stage/resource-cpanm-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl/spack-src/
+	destination: /var/tmp/synk1/spack-stage/spack-stage-perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl/spack-src/cpanm/cpanm
+==> Ran patch() for perl
+==> perl: Executing phase: 'configure'
+==> perl: Executing phase: 'build'
+==> perl: Executing phase: 'install'
+==> perl: Successfully installed perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl
+  Fetch: 0.19s.  Build: 4m 3.67s.  Total: 4m 3.86s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl
+==> Installing openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr
+==> No binary for openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/84/8495c9affc536253648e942908e88e097f2ec7753ede55aca52e5dead3029e3c.tar.gz
+==> No patches needed for openblas
+==> openblas: Executing phase: 'edit'
+==> openblas: Executing phase: 'build'
+==> openblas: Executing phase: 'install'
+==> openblas: Successfully installed openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr
+  Fetch: 0.14s.  Build: 2m 1.39s.  Total: 2m 1.53s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr
+==> Installing hypre-2.25.0-xjdcyuafdia2vof5texmwa5joti467fc
+==> No binary for hypre-2.25.0-xjdcyuafdia2vof5texmwa5joti467fc found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-xjdcyuafdia2vof5texmwa5joti467fc
+  Fetch: 0.02s.  Build: 59.45s.  Total: 59.47s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/hypre-2.25.0-xjdcyuafdia2vof5texmwa5joti467fc
+==> Installing mfem-4.4.0-tk3mi6y57f57u4tj2s3srpobpysh7rgg
+==> No binary for mfem-4.4.0-tk3mi6y57f57u4tj2s3srpobpysh7rgg found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-tk3mi6y57f57u4tj2s3srpobpysh7rgg
+  Fetch: 0.01s.  Build: 4m 32.47s.  Total: 4m 32.48s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/mfem-4.4.0-tk3mi6y57f57u4tj2s3srpobpysh7rgg
+==> Installing laghos-3.1-kj4ksr3zr5nwgv2asdutoywugh3vjapy
+==> No binary for laghos-3.1-kj4ksr3zr5nwgv2asdutoywugh3vjapy found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-kj4ksr3zr5nwgv2asdutoywugh3vjapy
+  Fetch: 0.01s.  Build: 13.81s.  Total: 13.82s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-kj4ksr3zr5nwgv2asdutoywugh3vjapy
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
+Abort(1618319) on node 4 (rank 4 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 7 (rank 7 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 9 (rank 9 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 10 (rank 10 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 13 (rank 13 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 15 (rank 15 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 16 (rank 16 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 20 (rank 20 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 21 (rank 21 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 23 (rank 23 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 25 (rank 25 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 27 (rank 27 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 29 (rank 29 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 0 (rank 0 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 1 (rank 1 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 2 (rank 2 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 3 (rank 3 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 5 (rank 5 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 6 (rank 6 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 8 (rank 8 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 11 (rank 11 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 12 (rank 12 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 14 (rank 14 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 17 (rank 17 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 18 (rank 18 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 19 (rank 19 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 22 (rank 22 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 24 (rank 24 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 26 (rank 26 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 28 (rank 28 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 30 (rank 30 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+Abort(1618319) on node 31 (rank 31 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(607)......: 
+MPID_Init(793).............: 
+MPIDI_NM_mpi_init_hook(667): OFI addrinfo() failed (ofi_init.h:667:MPIDI_NM_mpi_init_hook:No data available)
+slurmstepd: error: *** STEP 11234535.12 ON quartz690 CANCELLED AT 2022-08-29T08:12:31 ***
+srun: error: quartz690: tasks 0-31: Killed
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-kj4ksr3zr5nwgv2asdutoywugh3vjapy/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/kj4ksr3zr5nwgv2asdutoywugh3vjapy-run-20220829-081228.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%intel@19.0.4.227 ^intel-mpi@2019.8
+Installing spec: laghos@3.1%intel@19.0.4.227+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%intel@19.0.4.227+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%intel@19.0.4.227~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%intel@19.0.4.227~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%intel@19.0.4.227 arch=linux-rhel7-broadwell ^gdbm@1.19%intel@19.0.4.227 arch=linux-rhel7-broadwell ^hypre@2.25.0%intel@19.0.4.227~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^intel-mpi@2019.8%intel@19.0.4.227~external-libfabric arch=linux-rhel7-broadwell ^metis@5.1.0%intel@19.0.4.227~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%intel@19.0.4.227~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%intel@19.0.4.227~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%intel@19.0.4.227~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%intel@19.0.4.227+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%intel@19.0.4.227+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%intel@19.0.4.227 arch=linux-rhel7-broadwell ^zlib@1.2.12%intel@19.0.4.227+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> intel-mpi@2019.8 : has external module in ['impi/2019.8']
+[+] /usr/tce/packages/impi/impi-2019.8-intel-19.0.4 (external intel-mpi-2019.8-udc5ivf7zvin4dpzhfqariric2loa3n4)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo
+[+] /usr (external diffutils-3.3-6nrqjprm5el7bmtotkdq7txgo52exsst)
+[+] /usr (external pkg-config-0.27.1-sizxcbdws23kouyheixk6y4yltnnmqoh)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz
+[+] /usr/tce (external cmake-3.14.5-fqkfwj7dwlrjwh4egvocbo62kg3vueyp)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr
+==> Installing hypre-2.25.0-qgqgcmptcqaoacd5ohd7vsqogwcu2l3o
+==> No binary for hypre-2.25.0-qgqgcmptcqaoacd5ohd7vsqogwcu2l3o found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-qgqgcmptcqaoacd5ohd7vsqogwcu2l3o
+  Fetch: 0.02s.  Build: 1m 3.05s.  Total: 1m 3.07s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/hypre-2.25.0-qgqgcmptcqaoacd5ohd7vsqogwcu2l3o
+==> Installing mfem-4.4.0-xrohknb3l5whld6kn5xaxozv5yr2szcv
+==> No binary for mfem-4.4.0-xrohknb3l5whld6kn5xaxozv5yr2szcv found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-xrohknb3l5whld6kn5xaxozv5yr2szcv
+  Fetch: 0.02s.  Build: 4m 31.14s.  Total: 4m 31.15s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/mfem-4.4.0-xrohknb3l5whld6kn5xaxozv5yr2szcv
+==> Installing laghos-3.1-fspaspj4uroxrmiajjb3ezn5eip6sqhd
+==> No binary for laghos-3.1-fspaspj4uroxrmiajjb3ezn5eip6sqhd found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-fspaspj4uroxrmiajjb3ezn5eip6sqhd
+  Fetch: 0.01s.  Build: 14.12s.  Total: 14.13s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-fspaspj4uroxrmiajjb3ezn5eip6sqhd
+Abort(1091215) on node 0 (rank 0 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 4 (rank 4 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 6 (rank 6 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 14 (rank 14 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 22 (rank 22 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 2 (rank 2 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 5 (rank 5 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 18 (rank 18 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 19 (rank 19 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 23 (rank 23 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 28 (rank 28 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 13 (rank 13 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 21 (rank 21 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 29 (rank 29 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 17 (rank 17 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 1 (rank 1 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 12 (rank 12 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 25 (rank 25 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 30 (rank 30 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 3 (rank 3 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 8 (rank 8 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 10 (rank 10 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 11 (rank 11 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 16 (rank 16 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 20 (rank 20 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 26 (rank 26 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 7 (rank 7 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 9 (rank 9 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 15 (rank 15 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 24 (rank 24 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 27 (rank 27 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+Abort(1091215) on node 31 (rank 31 in comm 0): Fatal error in PMPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(136)........: 
+MPID_Init(1138)..............: 
+MPIDI_OFI_mpi_init_hook(1061): OFI addrinfo() failed (ofi_init.c:1061:MPIDI_OFI_mpi_init_hook:No data available)
+slurmstepd: error: *** STEP 11234535.13 ON quartz690 CANCELLED AT 2022-08-29T08:19:42 ***
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
+srun: error: quartz690: tasks 0-31: Killed
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-fspaspj4uroxrmiajjb3ezn5eip6sqhd/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/fspaspj4uroxrmiajjb3ezn5eip6sqhd-run-20220829-081939.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%intel@19.0.4.227 ^intel-mpi@2018.0
+Installing spec: laghos@3.1%intel@19.0.4.227+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%intel@19.0.4.227+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%intel@19.0.4.227~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%intel@19.0.4.227~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%intel@19.0.4.227 arch=linux-rhel7-broadwell ^gdbm@1.19%intel@19.0.4.227 arch=linux-rhel7-broadwell ^hypre@2.25.0%intel@19.0.4.227~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^intel-mpi@2018.0%intel@19.0.4.227~external-libfabric arch=linux-rhel7-broadwell ^metis@5.1.0%intel@19.0.4.227~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%intel@19.0.4.227~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%intel@19.0.4.227~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%intel@19.0.4.227~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%intel@19.0.4.227+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%intel@19.0.4.227+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%intel@19.0.4.227 arch=linux-rhel7-broadwell ^zlib@1.2.12%intel@19.0.4.227+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> intel-mpi@2018.0 : has external module in ['impi/2018.0']
+[+] /usr/tce/packages/impi/impi-2018.0-intel-19.0.4 (external intel-mpi-2018.0-smi52dkvw4s7ipigh45hejljxsbi7e2a)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo
+[+] /usr (external diffutils-3.3-6nrqjprm5el7bmtotkdq7txgo52exsst)
+[+] /usr (external pkg-config-0.27.1-sizxcbdws23kouyheixk6y4yltnnmqoh)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz
+[+] /usr/tce (external cmake-3.14.5-fqkfwj7dwlrjwh4egvocbo62kg3vueyp)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr
+==> Installing hypre-2.25.0-q54mxer46a2wffadwdt7sy7wg5dzk3l4
+==> No binary for hypre-2.25.0-q54mxer46a2wffadwdt7sy7wg5dzk3l4 found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-q54mxer46a2wffadwdt7sy7wg5dzk3l4
+  Fetch: 0.03s.  Build: 59.59s.  Total: 59.62s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/hypre-2.25.0-q54mxer46a2wffadwdt7sy7wg5dzk3l4
+==> Installing mfem-4.4.0-vfb7ibk64wxgayllqorpnm4sdl66xrhf
+==> No binary for mfem-4.4.0-vfb7ibk64wxgayllqorpnm4sdl66xrhf found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-vfb7ibk64wxgayllqorpnm4sdl66xrhf
+  Fetch: 0.02s.  Build: 4m 31.15s.  Total: 4m 31.17s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/mfem-4.4.0-vfb7ibk64wxgayllqorpnm4sdl66xrhf
+==> Installing laghos-3.1-givt2mt4jw6ngduyqjapmoaj4j4elx4v
+==> No binary for laghos-3.1-givt2mt4jw6ngduyqjapmoaj4j4elx4v found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-givt2mt4jw6ngduyqjapmoaj4j4elx4v
+  Fetch: 0.01s.  Build: 13.87s.  Total: 13.88s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-givt2mt4jw6ngduyqjapmoaj4j4elx4v
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-givt2mt4jw6ngduyqjapmoaj4j4elx4v/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/givt2mt4jw6ngduyqjapmoaj4j4elx4v-run-20220829-082647.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%intel@19.0.4.227 ^intel-mpi@2017.1
+Installing spec: laghos@3.1%intel@19.0.4.227+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%intel@19.0.4.227+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%intel@19.0.4.227~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%intel@19.0.4.227~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%intel@19.0.4.227 arch=linux-rhel7-broadwell ^gdbm@1.19%intel@19.0.4.227 arch=linux-rhel7-broadwell ^hypre@2.25.0%intel@19.0.4.227~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^intel-mpi@2017.1%intel@19.0.4.227~external-libfabric arch=linux-rhel7-broadwell ^metis@5.1.0%intel@19.0.4.227~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%intel@19.0.4.227~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%intel@19.0.4.227~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%intel@19.0.4.227~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%intel@19.0.4.227+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%intel@19.0.4.227+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%intel@19.0.4.227 arch=linux-rhel7-broadwell ^zlib@1.2.12%intel@19.0.4.227+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> intel-mpi@2017.1 : has external module in ['impi/2017.1']
+[+] /usr/tce/packages/impi/impi-2017.1-intel-19.0.4 (external intel-mpi-2017.1-uuanvctwhgwia54fjw2psudv6xuxbatj)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo
+[+] /usr (external diffutils-3.3-6nrqjprm5el7bmtotkdq7txgo52exsst)
+[+] /usr (external pkg-config-0.27.1-sizxcbdws23kouyheixk6y4yltnnmqoh)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz
+[+] /usr/tce (external cmake-3.14.5-fqkfwj7dwlrjwh4egvocbo62kg3vueyp)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr
+==> Installing hypre-2.25.0-yqdieokscompvkyfilkjygf274gg76ud
+==> No binary for hypre-2.25.0-yqdieokscompvkyfilkjygf274gg76ud found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-yqdieokscompvkyfilkjygf274gg76ud
+  Fetch: 0.02s.  Build: 1m 0.85s.  Total: 1m 0.88s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/hypre-2.25.0-yqdieokscompvkyfilkjygf274gg76ud
+==> Installing mfem-4.4.0-wvm3iicw3lxz4bfl3ajgnexzq6rooudg
+==> No binary for mfem-4.4.0-wvm3iicw3lxz4bfl3ajgnexzq6rooudg found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-wvm3iicw3lxz4bfl3ajgnexzq6rooudg
+  Fetch: 0.02s.  Build: 4m 31.08s.  Total: 4m 31.09s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/mfem-4.4.0-wvm3iicw3lxz4bfl3ajgnexzq6rooudg
+==> Installing laghos-3.1-yr3iwmgnspqky53t3w424w2d2b67unff
+==> No binary for laghos-3.1-yr3iwmgnspqky53t3w424w2d2b67unff found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-yr3iwmgnspqky53t3w424w2d2b67unff
+  Fetch: 0.01s.  Build: 14.09s.  Total: 14.10s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-yr3iwmgnspqky53t3w424w2d2b67unff
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-yr3iwmgnspqky53t3w424w2d2b67unff/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/yr3iwmgnspqky53t3w424w2d2b67unff-run-20220829-083401.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%intel@19.0.4.227 ^intel-mpi@5.1.3
+Installing spec: laghos@3.1%intel@19.0.4.227+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%intel@19.0.4.227+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%intel@19.0.4.227~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%intel@19.0.4.227~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%intel@19.0.4.227 arch=linux-rhel7-broadwell ^gdbm@1.19%intel@19.0.4.227 arch=linux-rhel7-broadwell ^hypre@2.25.0%intel@19.0.4.227~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^intel-mpi@5.1.3%intel@19.0.4.227~external-libfabric arch=linux-rhel7-broadwell ^metis@5.1.0%intel@19.0.4.227~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%intel@19.0.4.227~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%intel@19.0.4.227~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%intel@19.0.4.227~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%intel@19.0.4.227+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%intel@19.0.4.227+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%intel@19.0.4.227 arch=linux-rhel7-broadwell ^zlib@1.2.12%intel@19.0.4.227+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> intel-mpi@5.1.3 : has external module in ['impi/5.1.3']
+[+] /usr/tce/packages/impi/impi-5.1.3-intel-19.0.4 (external intel-mpi-5.1.3-rdjlhjar2pq42f73frp4catoesp6s2ex)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo
+[+] /usr (external diffutils-3.3-6nrqjprm5el7bmtotkdq7txgo52exsst)
+[+] /usr (external pkg-config-0.27.1-sizxcbdws23kouyheixk6y4yltnnmqoh)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz
+[+] /usr/tce (external cmake-3.14.5-fqkfwj7dwlrjwh4egvocbo62kg3vueyp)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr
+==> Installing hypre-2.25.0-mkbyhq2chb3p7zb72wcqvcidew3upjj7
+==> No binary for hypre-2.25.0-mkbyhq2chb3p7zb72wcqvcidew3upjj7 found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-mkbyhq2chb3p7zb72wcqvcidew3upjj7
+  Fetch: 0.02s.  Build: 1m 1.62s.  Total: 1m 1.65s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/hypre-2.25.0-mkbyhq2chb3p7zb72wcqvcidew3upjj7
+==> Installing mfem-4.4.0-grpuoiw5ppvhf4qu2rhbukyvi73jxzki
+==> No binary for mfem-4.4.0-grpuoiw5ppvhf4qu2rhbukyvi73jxzki found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-grpuoiw5ppvhf4qu2rhbukyvi73jxzki
+  Fetch: 0.02s.  Build: 4m 32.81s.  Total: 4m 32.82s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/mfem-4.4.0-grpuoiw5ppvhf4qu2rhbukyvi73jxzki
+==> Installing laghos-3.1-zaooqbobd5t3fltgoh66ihhvts4hot2i
+==> No binary for laghos-3.1-zaooqbobd5t3fltgoh66ihhvts4hot2i found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-zaooqbobd5t3fltgoh66ihhvts4hot2i
+  Fetch: 0.01s.  Build: 14.53s.  Total: 14.54s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-zaooqbobd5t3fltgoh66ihhvts4hot2i
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-zaooqbobd5t3fltgoh66ihhvts4hot2i/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/zaooqbobd5t3fltgoh66ihhvts4hot2i-run-20220829-084117.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%intel@19.0.4.227 ^mvapich2@2.2
+Installing spec: laghos@3.1%intel@19.0.4.227+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%intel@19.0.4.227+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%intel@19.0.4.227~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%intel@19.0.4.227~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%intel@19.0.4.227 arch=linux-rhel7-broadwell ^gdbm@1.19%intel@19.0.4.227 arch=linux-rhel7-broadwell ^hypre@2.25.0%intel@19.0.4.227~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^metis@5.1.0%intel@19.0.4.227~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%intel@19.0.4.227~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^mvapich2@2.2%intel@19.0.4.227~alloca~cuda~debug+regcache+wrapperrpath ch3_rank_bits=32 fabrics=mrail file_systems=auto process_managers=auto threads=multiple arch=linux-rhel7-broadwell ^ncurses@6.3%intel@19.0.4.227~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%intel@19.0.4.227~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%intel@19.0.4.227+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%intel@19.0.4.227+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%intel@19.0.4.227 arch=linux-rhel7-broadwell ^zlib@1.2.12%intel@19.0.4.227+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> mvapich2@2.2 : has external module in ['mvapich2/2.2']
+[+] /usr/tce/packages/mvapich2/mvapich2-2.2-intel-19.0.4 (external mvapich2-2.2-g3qdz62lyn4vpwpgislex3unmgdvdx5r)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo
+[+] /usr (external diffutils-3.3-6nrqjprm5el7bmtotkdq7txgo52exsst)
+[+] /usr (external pkg-config-0.27.1-sizxcbdws23kouyheixk6y4yltnnmqoh)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz
+[+] /usr/tce (external cmake-3.14.5-fqkfwj7dwlrjwh4egvocbo62kg3vueyp)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr
+==> Installing hypre-2.25.0-s6jiix2kxpysjv5lzdeoejt3vh335ajn
+==> No binary for hypre-2.25.0-s6jiix2kxpysjv5lzdeoejt3vh335ajn found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-s6jiix2kxpysjv5lzdeoejt3vh335ajn
+  Fetch: 0.03s.  Build: 59.59s.  Total: 59.61s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/hypre-2.25.0-s6jiix2kxpysjv5lzdeoejt3vh335ajn
+==> Installing mfem-4.4.0-rbjhtu2r437jzxlazz5oyw3flhntp6kl
+==> No binary for mfem-4.4.0-rbjhtu2r437jzxlazz5oyw3flhntp6kl found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-rbjhtu2r437jzxlazz5oyw3flhntp6kl
+  Fetch: 0.01s.  Build: 4m 29.33s.  Total: 4m 29.35s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/mfem-4.4.0-rbjhtu2r437jzxlazz5oyw3flhntp6kl
+==> Installing laghos-3.1-rj2jvnavnqoyjg2uhwnyvnng3zlh6iqz
+==> No binary for laghos-3.1-rj2jvnavnqoyjg2uhwnyvnng3zlh6iqz found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-rj2jvnavnqoyjg2uhwnyvnng3zlh6iqz
+  Fetch: 0.01s.  Build: 13.85s.  Total: 13.86s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-rj2jvnavnqoyjg2uhwnyvnng3zlh6iqz
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-rj2jvnavnqoyjg2uhwnyvnng3zlh6iqz/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/rj2jvnavnqoyjg2uhwnyvnng3zlh6iqz-run-20220829-084829.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%intel@19.0.4.227 ^mvapich2@2.3
+Installing spec: laghos@3.1%intel@19.0.4.227+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%intel@19.0.4.227+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%intel@19.0.4.227~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%intel@19.0.4.227~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%intel@19.0.4.227 arch=linux-rhel7-broadwell ^gdbm@1.19%intel@19.0.4.227 arch=linux-rhel7-broadwell ^hypre@2.25.0%intel@19.0.4.227~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^metis@5.1.0%intel@19.0.4.227~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%intel@19.0.4.227~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^mvapich2@2.3%intel@19.0.4.227~alloca~cuda~debug+regcache+wrapperrpath ch3_rank_bits=32 fabrics=mrail file_systems=auto process_managers=auto threads=multiple arch=linux-rhel7-broadwell ^ncurses@6.3%intel@19.0.4.227~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%intel@19.0.4.227~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%intel@19.0.4.227+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%intel@19.0.4.227+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%intel@19.0.4.227 arch=linux-rhel7-broadwell ^zlib@1.2.12%intel@19.0.4.227+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> mvapich2@2.3 : has external module in ['mvapich2/2.3']
+[+] /usr/tce/packages/mvapich2/mvapich2-2.3-intel-19.0.4 (external mvapich2-2.3-4cl5zmu6pdspm2nmrqdxt2xwncsgwkms)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo
+[+] /usr (external diffutils-3.3-6nrqjprm5el7bmtotkdq7txgo52exsst)
+[+] /usr (external pkg-config-0.27.1-sizxcbdws23kouyheixk6y4yltnnmqoh)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz
+[+] /usr/tce (external cmake-3.14.5-fqkfwj7dwlrjwh4egvocbo62kg3vueyp)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr
+==> Installing hypre-2.25.0-uf57znj63i4v5wylzkwuhtelry5rzgrd
+==> No binary for hypre-2.25.0-uf57znj63i4v5wylzkwuhtelry5rzgrd found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-uf57znj63i4v5wylzkwuhtelry5rzgrd
+  Fetch: 0.02s.  Build: 58.09s.  Total: 58.11s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/hypre-2.25.0-uf57znj63i4v5wylzkwuhtelry5rzgrd
+==> Installing mfem-4.4.0-oui2a4rqjj55lcswqs7vtouc575w3opw
+==> No binary for mfem-4.4.0-oui2a4rqjj55lcswqs7vtouc575w3opw found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-oui2a4rqjj55lcswqs7vtouc575w3opw
+  Fetch: 0.02s.  Build: 4m 30.40s.  Total: 4m 30.42s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/mfem-4.4.0-oui2a4rqjj55lcswqs7vtouc575w3opw
+==> Installing laghos-3.1-djop4didfksjlk4xb2oozpwmfrnml4un
+==> No binary for laghos-3.1-djop4didfksjlk4xb2oozpwmfrnml4un found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-djop4didfksjlk4xb2oozpwmfrnml4un
+  Fetch: 0.01s.  Build: 14.15s.  Total: 14.16s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-djop4didfksjlk4xb2oozpwmfrnml4un
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-djop4didfksjlk4xb2oozpwmfrnml4un/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/djop4didfksjlk4xb2oozpwmfrnml4un-run-20220829-085540.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%intel@19.0.4.227 ^mvapich2@2.3.6
+Installing spec: laghos@3.1%intel@19.0.4.227+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%intel@19.0.4.227+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%intel@19.0.4.227~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%intel@19.0.4.227~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%intel@19.0.4.227 arch=linux-rhel7-broadwell ^gdbm@1.19%intel@19.0.4.227 arch=linux-rhel7-broadwell ^hypre@2.25.0%intel@19.0.4.227~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^metis@5.1.0%intel@19.0.4.227~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%intel@19.0.4.227~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^mvapich2@2.3.6%intel@19.0.4.227~alloca~cuda~debug+regcache+wrapperrpath ch3_rank_bits=32 fabrics=mrail file_systems=auto process_managers=auto threads=multiple arch=linux-rhel7-broadwell ^ncurses@6.3%intel@19.0.4.227~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%intel@19.0.4.227~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^perl@5.34.1%intel@19.0.4.227+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%intel@19.0.4.227+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%intel@19.0.4.227 arch=linux-rhel7-broadwell ^zlib@1.2.12%intel@19.0.4.227+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+==> mvapich2@2.3.6 : has external module in ['mvapich2/2.3.6']
+[+] /usr/tce/packages/mvapich2/mvapich2-2.3.6-intel-19.0.4 (external mvapich2-2.3.6-vjvggjum7wscbvo4ydttjfzw2fjigvef)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo
+[+] /usr (external diffutils-3.3-6nrqjprm5el7bmtotkdq7txgo52exsst)
+[+] /usr (external pkg-config-0.27.1-sizxcbdws23kouyheixk6y4yltnnmqoh)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz
+[+] /usr/tce (external cmake-3.14.5-fqkfwj7dwlrjwh4egvocbo62kg3vueyp)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr
+==> Installing hypre-2.25.0-s5nss4scm7lelt3hdoddafjoaulfezzw
+==> No binary for hypre-2.25.0-s5nss4scm7lelt3hdoddafjoaulfezzw found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-s5nss4scm7lelt3hdoddafjoaulfezzw
+  Fetch: 0.02s.  Build: 1m 0.34s.  Total: 1m 0.37s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/hypre-2.25.0-s5nss4scm7lelt3hdoddafjoaulfezzw
+==> Installing mfem-4.4.0-suc7qilmxbedepvsvmsnrbfn5qr2jqx3
+==> No binary for mfem-4.4.0-suc7qilmxbedepvsvmsnrbfn5qr2jqx3 found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-suc7qilmxbedepvsvmsnrbfn5qr2jqx3
+  Fetch: 0.02s.  Build: 4m 31.37s.  Total: 4m 31.39s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/mfem-4.4.0-suc7qilmxbedepvsvmsnrbfn5qr2jqx3
+==> Installing laghos-3.1-6ummtsu4phrgl6o3khttlqmjlwrm2a3z
+==> No binary for laghos-3.1-6ummtsu4phrgl6o3khttlqmjlwrm2a3z found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-6ummtsu4phrgl6o3khttlqmjlwrm2a3z
+  Fetch: 0.01s.  Build: 14.81s.  Total: 14.81s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-6ummtsu4phrgl6o3khttlqmjlwrm2a3z
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-6ummtsu4phrgl6o3khttlqmjlwrm2a3z/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/6ummtsu4phrgl6o3khttlqmjlwrm2a3z-run-20220829-090252.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%intel@19.0.4.227 ^openmpi@2.0.0
+Installing spec: laghos@3.1%intel@19.0.4.227+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%intel@19.0.4.227+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%intel@19.0.4.227~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%intel@19.0.4.227~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%intel@19.0.4.227 arch=linux-rhel7-broadwell ^gdbm@1.19%intel@19.0.4.227 arch=linux-rhel7-broadwell ^hypre@2.25.0%intel@19.0.4.227~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^metis@5.1.0%intel@19.0.4.227~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%intel@19.0.4.227~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%intel@19.0.4.227~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%intel@19.0.4.227~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^openmpi@2.0.0%intel@19.0.4.227~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker+romio+rsh~singularity+static~thread_multiple+vt+wrapper-rpath fabrics=none patches=51e39ef,d26978e,d7f08ae schedulers=none arch=linux-rhel7-broadwell ^perl@5.34.1%intel@19.0.4.227+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%intel@19.0.4.227+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%intel@19.0.4.227 arch=linux-rhel7-broadwell ^zlib@1.2.12%intel@19.0.4.227+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo
+[+] /usr (external diffutils-3.3-6nrqjprm5el7bmtotkdq7txgo52exsst)
+[+] /usr (external pkg-config-0.27.1-sizxcbdws23kouyheixk6y4yltnnmqoh)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz
+==> openmpi@2.0.0 : has external module in ['openmpi/2.0.0']
+[+] /usr/tce/packages/openmpi/openmpi-2.0.0-intel-19.0.4 (external openmpi-2.0.0-afuf5bp2zsc3n7kmhcnhf6bzwafva563)
+[+] /usr/tce (external cmake-3.14.5-fqkfwj7dwlrjwh4egvocbo62kg3vueyp)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr
+==> Installing hypre-2.25.0-whoiispwnunvsdmlpdmg7zabubaqlatq
+==> No binary for hypre-2.25.0-whoiispwnunvsdmlpdmg7zabubaqlatq found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-whoiispwnunvsdmlpdmg7zabubaqlatq
+  Fetch: 0.02s.  Build: 54.65s.  Total: 54.67s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/hypre-2.25.0-whoiispwnunvsdmlpdmg7zabubaqlatq
+==> Installing mfem-4.4.0-qnilrcitjas4lzcbbxcjntzen3s7xl4p
+==> No binary for mfem-4.4.0-qnilrcitjas4lzcbbxcjntzen3s7xl4p found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-qnilrcitjas4lzcbbxcjntzen3s7xl4p
+  Fetch: 0.01s.  Build: 4m 34.17s.  Total: 4m 34.18s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/mfem-4.4.0-qnilrcitjas4lzcbbxcjntzen3s7xl4p
+==> Installing laghos-3.1-ukaakixcimbivz35zkdqo3v2jql2ebe7
+==> No binary for laghos-3.1-ukaakixcimbivz35zkdqo3v2jql2ebe7 found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-ukaakixcimbivz35zkdqo3v2jql2ebe7
+  Fetch: 0.01s.  Build: 15.14s.  Total: 15.15s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-ukaakixcimbivz35zkdqo3v2jql2ebe7
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-ukaakixcimbivz35zkdqo3v2jql2ebe7/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/ukaakixcimbivz35zkdqo3v2jql2ebe7-run-20220829-091002.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%intel@19.0.4.227 ^openmpi@2.1.0
+Installing spec: laghos@3.1%intel@19.0.4.227+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%intel@19.0.4.227+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%intel@19.0.4.227~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%intel@19.0.4.227~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%intel@19.0.4.227 arch=linux-rhel7-broadwell ^gdbm@1.19%intel@19.0.4.227 arch=linux-rhel7-broadwell ^hypre@2.25.0%intel@19.0.4.227~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^metis@5.1.0%intel@19.0.4.227~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%intel@19.0.4.227~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%intel@19.0.4.227~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%intel@19.0.4.227~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^openmpi@2.1.0%intel@19.0.4.227~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker+romio+rsh~singularity+static~thread_multiple+vt+wrapper-rpath fabrics=none patches=51e39ef,d7f08ae schedulers=none arch=linux-rhel7-broadwell ^perl@5.34.1%intel@19.0.4.227+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%intel@19.0.4.227+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%intel@19.0.4.227 arch=linux-rhel7-broadwell ^zlib@1.2.12%intel@19.0.4.227+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo
+[+] /usr (external diffutils-3.3-6nrqjprm5el7bmtotkdq7txgo52exsst)
+[+] /usr (external pkg-config-0.27.1-sizxcbdws23kouyheixk6y4yltnnmqoh)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz
+==> openmpi@2.1.0 : has external module in ['openmpi/2.1.0']
+[+] /usr/tce/packages/openmpi/openmpi-2.1.0-intel-19.0.4 (external openmpi-2.1.0-t76hkmvmli4jbprzktcpo5hqguehkyx3)
+[+] /usr/tce (external cmake-3.14.5-fqkfwj7dwlrjwh4egvocbo62kg3vueyp)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr
+==> Installing hypre-2.25.0-avml7i6otd3hlinochgcnixznnzxxp5s
+==> No binary for hypre-2.25.0-avml7i6otd3hlinochgcnixznnzxxp5s found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-avml7i6otd3hlinochgcnixznnzxxp5s
+  Fetch: 0.02s.  Build: 56.02s.  Total: 56.04s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/hypre-2.25.0-avml7i6otd3hlinochgcnixznnzxxp5s
+==> Installing mfem-4.4.0-gygr4foukf2e6xz2qm7hquoddjrm4rsi
+==> No binary for mfem-4.4.0-gygr4foukf2e6xz2qm7hquoddjrm4rsi found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-gygr4foukf2e6xz2qm7hquoddjrm4rsi
+  Fetch: 0.01s.  Build: 4m 39.26s.  Total: 4m 39.27s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/mfem-4.4.0-gygr4foukf2e6xz2qm7hquoddjrm4rsi
+==> Installing laghos-3.1-xse6yviqgudsaqclkre6jylta32itawy
+==> No binary for laghos-3.1-xse6yviqgudsaqclkre6jylta32itawy found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-xse6yviqgudsaqclkre6jylta32itawy
+  Fetch: 0.01s.  Build: 15.39s.  Total: 15.40s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-xse6yviqgudsaqclkre6jylta32itawy
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-xse6yviqgudsaqclkre6jylta32itawy/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/xse6yviqgudsaqclkre6jylta32itawy-run-20220829-091725.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%intel@19.0.4.227 ^openmpi@3.0.1
+Installing spec: laghos@3.1%intel@19.0.4.227+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%intel@19.0.4.227+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%intel@19.0.4.227~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%intel@19.0.4.227~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%intel@19.0.4.227 arch=linux-rhel7-broadwell ^gdbm@1.19%intel@19.0.4.227 arch=linux-rhel7-broadwell ^hypre@2.25.0%intel@19.0.4.227~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^metis@5.1.0%intel@19.0.4.227~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%intel@19.0.4.227~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%intel@19.0.4.227~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%intel@19.0.4.227~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^openmpi@3.0.1%intel@19.0.4.227~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker+romio+rsh~singularity+static+vt+wrapper-rpath fabrics=none patches=32effdf,51e39ef schedulers=none arch=linux-rhel7-broadwell ^perl@5.34.1%intel@19.0.4.227+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%intel@19.0.4.227+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%intel@19.0.4.227 arch=linux-rhel7-broadwell ^zlib@1.2.12%intel@19.0.4.227+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo
+[+] /usr (external diffutils-3.3-6nrqjprm5el7bmtotkdq7txgo52exsst)
+[+] /usr (external pkg-config-0.27.1-sizxcbdws23kouyheixk6y4yltnnmqoh)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz
+==> openmpi@3.0.1 : has external module in ['openmpi/3.0.1']
+[+] /usr/tce/packages/openmpi/openmpi-3.0.1-intel-19.0.4 (external openmpi-3.0.1-ndf56xzb7xshjs5bovka6o4gsoh53j6l)
+[+] /usr/tce (external cmake-3.14.5-fqkfwj7dwlrjwh4egvocbo62kg3vueyp)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr
+==> Installing hypre-2.25.0-a7vdhdsbjrew2umseyjnksn4jhn62umg
+==> No binary for hypre-2.25.0-a7vdhdsbjrew2umseyjnksn4jhn62umg found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-a7vdhdsbjrew2umseyjnksn4jhn62umg
+  Fetch: 0.02s.  Build: 56.75s.  Total: 56.77s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/hypre-2.25.0-a7vdhdsbjrew2umseyjnksn4jhn62umg
+==> Installing mfem-4.4.0-emspfccrjzrgsvfpgwdqsma66xevtakk
+==> No binary for mfem-4.4.0-emspfccrjzrgsvfpgwdqsma66xevtakk found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-emspfccrjzrgsvfpgwdqsma66xevtakk
+  Fetch: 0.01s.  Build: 4m 34.86s.  Total: 4m 34.88s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/mfem-4.4.0-emspfccrjzrgsvfpgwdqsma66xevtakk
+==> Installing laghos-3.1-bb3nmnimftpixfywh4xwa765lwpowhe6
+==> No binary for laghos-3.1-bb3nmnimftpixfywh4xwa765lwpowhe6 found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-bb3nmnimftpixfywh4xwa765lwpowhe6
+  Fetch: 0.01s.  Build: 15.34s.  Total: 15.35s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-bb3nmnimftpixfywh4xwa765lwpowhe6
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-bb3nmnimftpixfywh4xwa765lwpowhe6/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/bb3nmnimftpixfywh4xwa765lwpowhe6-run-20220829-092440.stdout
+
+
+Generating abstract spec
+Concretizing spec: laghos@3.1%intel@19.0.4.227 ^openmpi@4.0.0
+Installing spec: laghos@3.1%intel@19.0.4.227+metis~ofast arch=linux-rhel7-broadwell ^berkeley-db@18.1.40%intel@19.0.4.227+cxx~docs+stl patches=b231fcc arch=linux-rhel7-broadwell ^bzip2@1.0.8%intel@19.0.4.227~debug~pic+shared arch=linux-rhel7-broadwell ^cmake@3.14.5%intel@19.0.4.227~doc+ncurses+ownlibs~qt build_type=Release patches=1c54004 arch=linux-rhel7-broadwell ^diffutils@3.3%intel@19.0.4.227 arch=linux-rhel7-broadwell ^gdbm@1.19%intel@19.0.4.227 arch=linux-rhel7-broadwell ^hypre@2.25.0%intel@19.0.4.227~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~unified-memory arch=linux-rhel7-broadwell ^metis@5.1.0%intel@19.0.4.227~gdb~int64~real64+shared build_type=Release patches=4991da9 arch=linux-rhel7-broadwell ^mfem@4.4.0%intel@19.0.4.227~amgx~conduit~cuda~debug~examples~exceptions~fms~gnutls~gslib~lapack~libceed~libunwind+metis~miniapps~mpfr+mpi~netcdf~occa~openmp~petsc~pumi~raja~rocm~shared~slepc+static~strumpack~suite-sparse~sundials~superlu-dist~threadsafe~umpire+zlib timer=auto arch=linux-rhel7-broadwell ^ncurses@6.3%intel@19.0.4.227~symlinks+termlib abi=none arch=linux-rhel7-broadwell ^openblas@0.3.20%intel@19.0.4.227~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-rhel7-broadwell ^openmpi@4.0.0%intel@19.0.4.227~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker+romio+rsh~singularity+static+vt+wrapper-rpath fabrics=none patches=073477a,60ce20b schedulers=none arch=linux-rhel7-broadwell ^perl@5.34.1%intel@19.0.4.227+cpanm+shared+threads arch=linux-rhel7-broadwell ^pkg-config@0.27.1%intel@19.0.4.227+internal_glib patches=49ffcd6 arch=linux-rhel7-broadwell ^readline@8.1.2%intel@19.0.4.227 arch=linux-rhel7-broadwell ^zlib@1.2.12%intel@19.0.4.227+optimize+pic+shared patches=0d38234 arch=linux-rhel7-broadwell
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/berkeley-db-18.1.40-7jspn2a4l4swv3rvr2zrpazadumydrfo
+[+] /usr (external diffutils-3.3-6nrqjprm5el7bmtotkdq7txgo52exsst)
+[+] /usr (external pkg-config-0.27.1-sizxcbdws23kouyheixk6y4yltnnmqoh)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/zlib-1.2.12-zd4ybdtyigm5r22bo5rakucpcbyp5vkz
+==> openmpi@4.0.0 : has external module in ['openmpi/4.0.0']
+[+] /usr/tce/packages/openmpi/openmpi-4.0.0-intel-19.0.4 (external openmpi-4.0.0-rd2ysxa4yo4zp47x66gv3lupbpsia2jz)
+[+] /usr/tce (external cmake-3.14.5-fqkfwj7dwlrjwh4egvocbo62kg3vueyp)
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/bzip2-1.0.8-bldwi7czks4k6s5ly6fj5giybtmaggln
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/ncurses-6.3-4crvxhundrrczmpcpxb3z2lwmtxt4qtg
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/metis-5.1.0-mlv7qspog26ojhvqgbz7se7t7iymdyr3
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/readline-8.1.2-hmw7ja346whudn44yhsliuvgymzij7rh
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/gdbm-1.19-q2wadqlryyifwpils4grbkvawsfk2wzu
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/perl-5.34.1-5u2vo3jcptgmea2qlipwoyvvjoqiqxfl
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/openblas-0.3.20-5gnwwulotan7k47qll65oeobxxv4pmvr
+==> Installing hypre-2.25.0-37prwkagzpkt3yss2hfrbmuzqmlhhqib
+==> No binary for hypre-2.25.0-37prwkagzpkt3yss2hfrbmuzqmlhhqib found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/f9/f9fc8371d91239fca694284dab17175bfda3821d7b7a871fd2e8f9d5930f303c.tar.gz
+==> No patches needed for hypre
+==> hypre: Executing phase: 'autoreconf'
+==> hypre: Executing phase: 'configure'
+==> hypre: Executing phase: 'build'
+==> hypre: Executing phase: 'install'
+==> hypre: Successfully installed hypre-2.25.0-37prwkagzpkt3yss2hfrbmuzqmlhhqib
+  Fetch: 0.02s.  Build: 54.95s.  Total: 54.97s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/hypre-2.25.0-37prwkagzpkt3yss2hfrbmuzqmlhhqib
+==> Installing mfem-4.4.0-vlhpstpiqczcv3dqvacpe6frvmbqo66o
+==> No binary for mfem-4.4.0-vlhpstpiqczcv3dqvacpe6frvmbqo66o found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/37/37250dbef6e97b16dc9ab50973e8d68bc165bb4afcdaf91b3b72c8972c87deef.tar.gz
+==> No patches needed for mfem
+==> mfem: Executing phase: 'configure'
+==> mfem: Executing phase: 'build'
+==> mfem: Executing phase: 'install'
+==> mfem: Successfully installed mfem-4.4.0-vlhpstpiqczcv3dqvacpe6frvmbqo66o
+  Fetch: 0.01s.  Build: 4m 36.25s.  Total: 4m 36.26s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/mfem-4.4.0-vlhpstpiqczcv3dqvacpe6frvmbqo66o
+==> Installing laghos-3.1-qw4ac3qzy7fwqdgwiajck5egkxpqcusu
+==> No binary for laghos-3.1-qw4ac3qzy7fwqdgwiajck5egkxpqcusu found: installing from source
+==> Using cached archive: /usr/WS2/synk1/spack/var/spack/cache/_source-cache/archive/49/49b65edcbf9732c7f6c228958620e18980c43ad8381315a8ba9957ecb7534cd5.tar.gz
+==> No patches needed for laghos
+==> laghos: Executing phase: 'edit'
+==> laghos: Executing phase: 'build'
+==> laghos: Executing phase: 'install'
+==> laghos: Successfully installed laghos-3.1-qw4ac3qzy7fwqdgwiajck5egkxpqcusu
+  Fetch: 0.01s.  Build: 14.77s.  Total: 14.78s.
+[+] /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-qw4ac3qzy7fwqdgwiajck5egkxpqcusu
+running cmd = srun -n 32 /usr/WS2/synk1/spack/opt/spack/linux-rhel7-broadwell/intel-19.0.4.227/laghos-3.1-qw4ac3qzy7fwqdgwiajck5egkxpqcusu/bin/laghos -p 1 -dim 2 -rs 4 -tf 0.6 -pa > /usr/WS2/synk1/combinatorial-software-pipeline/software-search/data_collection/data/laghos/20220829/raw_data/qw4ac3qzy7fwqdgwiajck5egkxpqcusu-run-20220829-093151.stdout
+
+
