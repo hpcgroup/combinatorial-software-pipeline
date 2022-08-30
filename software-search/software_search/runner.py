@@ -2,6 +2,7 @@ from hashlib import md5
 import time
 import subprocess
 import argparse
+import spack.user_environment as uenv
 from spack.spec import Spec
 from spack.cmd.install import install_specs
 from spack.environment import environment
@@ -129,6 +130,10 @@ class BashRunner():
         env = environment.active_environment()
         software.concrete_spec.package.setup_run_environment(env=env)
         #software.setup_mpi()
+
+        # I THINK THIS IS HOW IT'S SUPPOSED TO WORK
+        #mods = uenv.environment_modifications_for_spec(software.concrete_spec)
+        #mods.apply_modifications()
 
         # run commands
         for cmd in commands[:-1]:
